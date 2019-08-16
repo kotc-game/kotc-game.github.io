@@ -1,7 +1,7 @@
 body
 {
     color: black;
-    background: #B46F6F;
+    background: #D0A5A5;
 }
 
 h1.header
@@ -85,7 +85,7 @@ nav.header li.current a, nav.header a:hover
 
 main
 {
-    background: #D0A5A5;
+    background: #DDD;
     width: 90%;
     margin-left: 3%;
     margin-right: 3%;
