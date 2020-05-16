@@ -96,7 +96,7 @@ main
     overflow: auto;
 }
 
-img.floating
+.floating
 {
     float: right;
     max-width: 40%;
