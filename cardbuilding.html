@@ -33,7 +33,7 @@
     </nav>
 
     <main>
-        <h2>Card Building Guide (12<sup>th</sup> Edition)</h2>
+        <h2>Card Building Guide (13<sup>th</sup> Edition)</h2>
         <p>This guide instructs how to design cards for Keeper of the Cards. It is written in a manner focused on precision and clarity as a reference moreso than ease of learning, so for a more gradual introduction, <a href="examples.html">Card Building Examples</a> is also available.</p>
 
         <h3>Contents</h3>
@@ -86,7 +86,7 @@
         <h4 id="inst-level">Level</h4>
         <p>A card's level is determined mathematically by considering the powers and abilities of the card. Each effect and target selection has a designated level increase formula, and each activation cost has a designated level decrease formula, listed in parentheses prior to the respective card text in the <a href="#texts">Card Texts</a> section.</p>
         <p>To determine a sub-ability level, take the sum of all effect level increase formulas corresponding to effect texts used in the sub-ability. To determine a spell or ability level, add together the spell or ability's sub-ability levels, then if the ability has an activation cost, subtract the activation cost level decrease calculated by the level decrease formula. Round the result up to the next integer if it isn't one already. If less than 1, set to 1.</p>
-        <p>To determine the level of a minion, add together the minion's SP and one fifth of its HP and round up to the next integer if it isn't one already. If less than 0, set to 0. Then, add the levels of all of the minion's abilities to the minion's level.</p>
+        <p>To determine the level of a minion, add together the minion's SP and one half of its HP and round up to the next integer if it isn't one already. If less than 0, set to 0. Then, add the levels of all of the minion's abilities to the minion's level.</p>
 
         <h4 id="inst-creation">Creating the Card</h4>
         <p>Once you have decided the parameters of your card and calculated the level, edit &ldquo;card.xcf&rdquo; in an image editor that supports the format (such as the GNU Image Manipulation Program or Photoshop), and edit the text fields appropriately. Make sure the &ldquo;Minion Template&rdquo; layer is visible while the &ldquo;Spell Template&rdquo; layer is invisible if designing a minion, or vice-versa if designing a spell. If designing a spell, also make sure to remove the SP and HP numbers from the bottom-left and bottom-right of the card, respectively.</p>
@@ -117,7 +117,7 @@
             <li>&ldquo;When a card(s) in your hand is destroyed:&rdquo;</li>
             <li>&ldquo;When a card(s) in your deck is destroyed:&rdquo;</li>
             <li>&ldquo;When you take damage:&rdquo;</li>
-            <li>&ldquo;When an opponent attacks, after Attack Formation:&rdquo;</li>
+            <li>&ldquo;When enemy attacks, after Attack Formation:&rdquo;</li>
         </ul>
 
         <h4 id="costs">Activation Costs</h4>
@@ -305,7 +305,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;Target up to <var>x</var> cards in any graveyard randomly;&rdquo;
+                &ldquo;Target up to <var>x</var> cards in any grave randomly;&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -347,7 +347,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;See one opponent's hand and target up to <var>x</var> cards therein;&rdquo;
+                &ldquo;See enemy's hand and target up to <var>x</var> cards therein;&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -511,16 +511,8 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
-                        <mi>t</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;exhaust and fatigue the targets.&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
                         <mi>t</mi>
                     </mrow>
                     <mtext>)</mtext>
@@ -543,6 +535,16 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;exhaust and fatigue the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
                         <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
                         <mi>t</mi>
@@ -555,8 +557,6 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
-                        <mn>2</mn>
-                        <mo>&InvisibleTimes;</mo>
                         <mi>t</mi>
                     </mrow>
                     <mtext>)</mtext>
@@ -591,6 +591,8 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
                         <mi>x</mi>
                     </mrow>
                     <mtext>)</mtext>
