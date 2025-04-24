@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Card Building Guide - Keeper of the Cards</title>
+    <title>Card Building Guide (15th Edition) - Keeper of the Cards</title>
     <meta name="description" content="The ultimate DIY trading card game" />
     <meta name="keywords" content="kotc" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     </nav>
 
     <main>
-        <h2>Card Building Guide (14<sup>th</sup> Edition)</h2>
+        <h2>Card Building Guide (15<sup>th</sup> Edition)</h2>
         <p>This guide instructs how to design cards for Keeper of the Cards. It is written in a manner focused on precision and clarity as a reference moreso than ease of learning, so for a more gradual introduction, <a href="examples.html">Card Building Examples</a> is also available.</p>
 
         <h3>Contents</h3>
@@ -79,7 +79,7 @@
             <li>1 or more effects from the <a href="#effects">Effects</a> section (required)</li>
         </ol>
         <p>These components must be listed in that order for each ability and each sub-ability. You must choose non-redacted components from the respective section only. Within these restrictions, you may design any ability you wish. All text of the ability, including all sub-abilities, must be on the same paragraph.</p>
-        <p>Many components have variables, indicated as <var>x</var>, <var>y</var>, or <var>z</var>, in them. You are to choose a number for each of these components, replace <var>x</var>, <var>y</var>, or <var>z</var> with the chosen number, and replace any <var>x</var>, <var>y</var>, and <var>z</var> in the component's formula with the same respective numbers. Variable amounts must be positive, non-zero integers.</p>
+        <p>Many components have variables, indicated as <var>x</var>, <var>y</var>, or <var>z</var>, in them. You are to choose a number, which <em>must</em> be a <strong>positive, non-zero integer</strong> (i.e. at least 1), for each of these components, replace <var>x</var>, <var>y</var>, or <var>z</var> with the chosen number, and replace any <var>x</var>, <var>y</var>, and <var>z</var> in the component's formula with the same respective numbers.</p>
         <p>Any minion ability must be named. The name is designated at the beginning of the ability's paragraph in all capital letters, followed by a colon (&ldquo;:&rdquo;). An example would be, &ldquo;GREED: Draw 2 cards.&rdquo;</p>
         <p>If a card is simple and has short text, you may include extra tutorial text to help teach keywords to beginners. Any tutorial text must be in parentheses and should be rendered in italics to make it clear that it is separate from the rest of the card text. For card texts where this is particularly useful, a suggested tutorial text is included.</p>
 
@@ -108,6 +108,7 @@
         <ul>
             <li>&ldquo;When this card attacks, after Attack Formation (ghost-play):&rdquo;</li>
             <li>&ldquo;When this card defends, after Defense Formation (ghost-play):&rdquo;</li>
+            <li>&ldquo;When this card attacks or defends, after Damage Allocation (ghost-play):&rdquo;</li>
             <li>&ldquo;When this in-play card is ability-targeted:&rdquo;</li>
             <li>&ldquo;When this in-play card is damaged:&rdquo;</li>
             <li>&ldquo;When this in-play card is destroyed (ghost-play):&rdquo;</li>
@@ -485,6 +486,18 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
+                &ldquo;place <var>x</var> Fatigue Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
                 &ldquo;place <var>x</var> Berzerk Counters on each target.&rdquo;
             </li>
             <li>
@@ -534,6 +547,28 @@
                     <mtext>)</mtext>
                 </math>
                 &ldquo;down-level each target by <var>x</var>.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;clone the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;clone the targets up to <var>x</var> times.&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -629,6 +664,16 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;<var>x</var>-dice-burn the battlefield.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
                         <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
                         <mi>x</mi>
@@ -646,6 +691,18 @@
                     <mtext>)</mtext>
                 </math>
                 &ldquo;<var>x</var>-dice-heal yourself.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>y</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;summon <var>x</var> level <var>y</var> pawns.&rdquo;
             </li>
         </ul>
     </main>

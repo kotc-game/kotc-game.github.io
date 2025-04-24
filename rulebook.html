@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Rulebook - Keeper of the Cards</title>
+    <title>Rulebook (15th Edition) - Keeper of the Cards</title>
     <meta name="description" content="The ultimate DIY trading card game" />
     <meta name="keywords" content="kotc" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -24,7 +24,7 @@
     </nav>
 
     <main>
-        <h2>Rulebook (14<sup>th</sup> Edition)</h2>
+        <h2>Rulebook (15<sup>th</sup> Edition)</h2>
 
         <p>Keeper of the Cards is a trading card game, loosely inspired by elements from various popular trading card games you may be familiar with. The primary distinguishing factor of Keeper of the Cards, however, is that you don't just trade cards; you <em>create</em> cards.</p>
 
@@ -44,6 +44,7 @@
                 <li><a href="#abilities">Abilities</a></li>
                 <li><a href="#minions">Minions</a></li>
                 <li><a href="#spells">Spells</a></li>
+                <li><a href="#pawns">Pawns</a></li>
                 <li><a href="#counters">Counters</a></li>
                 <li><a href="#chains">Chains</a></li>
                 <li><a href="#battles">Battles</a></li>
@@ -106,13 +107,13 @@
             <li><dfn>Resource Phase</dfn>: You may optionally sow 1 resource. A resource is <dfn>sowed</dfn> by placing any card from your hand into the granary unexhausted (oriented vertically) and face-down.</li>
             <li><dfn>Action Phase</dfn>: You may play any cards from your hand that you are able to, and you may also activate in-play minion abilities. See <a href="#minions">Minions</a> and <a href="#spells">Spells</a> for more information.</li>
             <li><dfn>Battle Phase</dfn>: You may do battle with your unexhausted minions. See <a href="#battles">Battles</a> for more information.</li>
-            <li><dfn>Recovery Phase</dfn>: Every in-play card and every resource (for all players) is unexhausted. Every in-play minion has its SP, HP, and level reset to the respective values printed on the card (reversing any damage or stat changes due to card abilities).</li>
+            <li><dfn>Recovery Phase</dfn>: Every in-play card and every resource (for all players) is unexhausted. Every in-play minion has its SP, HP, and level reset to the respective values printed on the card (reversing any damage or other changes to SP, HP, or level due to card abilities).</li>
         </ol>
 
         <h3 id="resources">Exhaustion and Recovery</h3>
         <p><dfn>Exhausted</dfn>, for any card, means that the card cannot currently be used; this is marked by having the card in a horizontal (sideways) orientation. By contrast, <dfn>unexhausted</dfn> means that the card can currently be used; this is marked by having the card in a vertical (upright) orientation. To exhaust a card, rotate it to a horizontal orientation. To unexhaust a card, rotate it to a vertical orientation. Cards are only unexhausted during the Recovery Phase.</p>
         <p>All cards inherently have a <dfn>resource cost</dfn>. To pay a card's resource cost is to exhaust a number of unexhausted resources in your granary equal to its level. For example, to pay the resource cost of a level 3 card, exhaust 3 of your currently unexhausted resources by turning them sideways.</p>
-        <p>During the Recovery Phase, all cards in every player's battlefield and granary are unexhausted. In addition, every minion in every player's battlefield has its SP, HP, and level returned to the respective values printed on it. This effectively reverses any stat changes that might have happened, including damage. As such, these stat changes effectively last only for the turn in which they take effect, even thô this is not explicitly stated in card effects.</p>
+        <p>During the Recovery Phase, all cards in every player's battlefield and granary are unexhausted. In addition, every minion in every player's battlefield has its SP, HP, and level returned to the respective values printed on it. This effectively reverses any changes to these values that might have happened, including damage. As such, changes to an in-play minion's SP, HP, and level effectively last only for the turn in which they take effect, even thô this is not explicitly stated in card effects.</p>
 
         <h3 id="abilities">Abilities</h3>
         <p>A card's <dfn>abilities</dfn> are indicated in the ability text. Each ability is composed of the following components in the following order:</p>
@@ -122,7 +123,7 @@
             <li><dfn>Activation cost</dfn>: Indicates a special cost paid upon activation of the ability, followed by an arrow (→). If you activate an ability you are unable to pay the activation cost for, the ability has no effect.</li>
             <li><dfn>Sub-abilities</dfn>: Composed of an optional <dfn>target selection</dfn>, indicating what cards are treated as targets for the sub-ability, and 1 or more <dfn>effects</dfn>, indicating what the sub-ability does. Each ability can have any number of sub-abilities; each sub-ability is a separate sentence.</li>
         </ol>
-        <p>Abilities whose activation condition is met can be <dfn>activated</dfn>. The way to do this depends on card type, but once an ability is activated, perform the following steps.</p>
+        <p>Abilities whose activation condition is met can be <dfn>activated</dfn>. The way to do this depends on card type, but once an ability is activated, perform the following steps:</p>
         <ol>
             <li>Immediately pay any activation cost. If you cannot, the ability fails. Otherwise, the ability becomes a chain link and either starts or continues a chain. (See <a href="#chains">Chains</a> for more information.)</li>
             <li>Wait for the ability to resolve in the chain. When it does, do what every sub-ability says to do in sequence. If any effect is impossible as stated on the card text, it does nothing.</li>
@@ -141,6 +142,16 @@
         <h3 id="spells">Spells</h3>
         <p><dfn>Spells</dfn> are cards that only have a single ability. Spells can be <dfn>cast</dfn> from your hand. To cast a spell whose activation condition is met, pay its resource cost, reveal the spell to all other players (at this point the spell does not exist in any zone), perform the steps described for activation of an ability in <a href="#abilities">Abilities</a>, and then send the spell to the grave.</p>
 
+        <h3 id="pawns">Pawns</h3>
+        <p><dfn>Pawns</dfn> are special minions which do not exist as true cards and are summoned only by abilities. Unlike normal minions, pawns only ever exist on the battlefield; when destroyed or otherwise moved to any zone other than the battlefield, they are instead permanently removed from the game. In every other respect, however, they are exactly the same as normal minions.</p>
+        <p>Just like normal minions, pawns have a level, SP, and HP. A pawn's level is determined by the ability which summons it. Its SP and HP are determined by the player who summons it based on its level; a number of times equal to the pawn's level, the player decides whether to add 1 SP to the pawn or to add 2 HP to the pawn. This directly mirrors the relationship between level, SP, and HP in normal minions.</p>
+        <p>For example, a level 2 pawn could have one of the following distributions of SP and HP, determined by the player who summons it:</p>
+        <ul>
+            <li>2 SP and 0 HP</li>
+            <li>1 SP and 2 HP</li>
+            <li>0 SP and 4 HP</li>
+        </ul>
+
         <h3 id="counters">Counters</h3>
         <p>A <dfn>counter</dfn> is an element, generally represented by arbitrary objects such as coins or Poker ships, which can be placed on an in-play minion, preparing an effect for future use. It stays on the minion it is placed on until either the minion is moved to a zone other than the battlefield, an ability removes the counter, or the counter's effect is triggered.</p>
         <p>There are several different types of counters, each of which has a different effect. These effects broadly are classified into two categories: proactive counter effects, and reactive counter effects.</p>
@@ -151,18 +162,19 @@
         <p>Additionally, the following rules apply to all counters:</p>
         <ul>
             <li>Removing counters for their effects does <strong>not</strong> require exhausting the minion it is on since the effect is that of the counter, not of the minion.</li>
-            <li>The player who placed a counter is considered to be the counter’s &ldquo;owner&rdquo; and &ldquo;controller&rdquo; and is the one who can remove it for its effect, regardless of who the controller of the minion is. For example, if you place one of these counters on a minion controlled by another player, it is you who can then remove the counters to trigger the effect, and other players – including the minion's controller – cannot do so. Note that this restriction only applies to the effect of the counter itself; there is no restriction on how any counter, including a counter with an effect, can be removed for an activation cost or by a card effect.</li>
+            <li>The player who placed a counter is considered to be the counter’s &ldquo;owner&rdquo; and &ldquo;controller&rdquo; and is the one who can remove it for its effect, regardless of who the controller of the minion is. For example, if you place one of these counters on an enemy minion, it is you who can then remove the counters to trigger the effect, and other players – including the minion's controller – cannot do so. Note that this restriction only applies to the effect of the counter itself; there is no restriction on how any counter, including a counter with an effect, can be removed for an activation cost or by a card effect.</li>
             <li>Removing the counter to trigger its effect is treated the same as an activation cost of an ability, and thus is done immediately when the effect is triggered.</li>
         </ul>
         <div class="no-break">
         <p>Following is a list of counter types which are currently available, and an explanation of each counter type's effect. Here, <dfn>the host</dfn> refers to the minion that the counter was removed from.</p>
         <ul>
             <li><dfn>Sword Counter</dfn> (proactive): Increase the host’s SP by 1.</li>
-            <li><dfn>Shield Counter</dfn> (reactive): When the host would take damage: Reduce the damage taken by 2.</li>
+            <li><dfn>Shield Counter</dfn> (reactive): When the host would take damage from a die: Zero the damage of that die.</li>
             <li><dfn>Weakness Counter</dfn> (proactive): Decrease the host’s SP by 1.</li>
             <li><dfn>Damage Counter</dfn> (proactive): Roll a six-sided die and inflict damage to the host equal to the result.</li>
             <li><dfn>Exhaustion Counter</dfn> (proactive): Exhaust the host.</li>
-            <li><dfn>Berzerk Counter</dfn> (proactive): Choose a valid victim for the host; immediately after the current chain finishes resolving, force the host to attack the chosen victim (with only itself as the attacking team), as if it was the host's controller's Battle Phase, but do not exhaust the host, also, the host's abilities cannot be activated until after this battle's Damage Allocation.</li>
+            <li><dfn>Fatigue Counter</dfn> (proactive): Fatigue the host.</li>
+            <li><dfn>Berzerk Counter</dfn> (proactive): Choose a valid victim for the host; immediately after the current chain finishes resolving, force the host to attack the chosen victim (with only itself as the attacking team), as if it was the host's controller's Battle Phase, but do not exhaust the host, also, the host's abilities cannot be activated for the rest of this turn.</li>
             <li><dfn>Taunt Counter</dfn> (reactive): When the host's controller is the defending player in an attack: Change the victim of the attack to the host.</li>
             <li><dfn>Dice Counter</dfn> (reactive): When a die is rolled (no matter who rolled the die initially): Re-roll it.</li>
             <li><dfn>Trap Counter</dfn> (reactive): When a chaining action is performed while the host is unexhausted: The host's controller may exhaust the host to activate any ability of the host, ignoring its activation condition, as a new chain link to the current chain. (See <a href="#chains">Chains</a> for more information.)</li>
@@ -237,6 +249,11 @@
         </div>
 
         <div class="no-break">
+        <h4>Clone</h4>
+        <p>To <dfn>clone</dfn> a minion is to summon a pawn with the exact same SP, HP, level, and abilities as the minion (paying the usual cost for summoning a minion of that level). Only minions can be cloned; spells cannot be cloned.</p>
+        </div>
+
+        <div class="no-break">
         <h4>Controller</h4>
         <p>The <dfn>controller</dfn> of a card is the player whose zone it is in, regardless of who its owner is. So for example, if you use an effect to summon a minion owned by another player, you are its controller while it remains in your battlefield and can use it the same way as minions in your battlefield owned by you.</p>
         <p>When the controller of a card changes (as can happen with the hypnotize effect), its location is implicitly changed to the field of its new controller, in the zone it was in when its controller changed. For example, if a minion in the battlefield of player 1 is hypnotized and its controller changed to player 2, it is moved to the battlefield of player 2.</p>
@@ -266,12 +283,18 @@
         </ol>
         <p>Just as when playing the card normally, you must pay all usual costs, including any applicable activation costs for spells, and any minion summoned is placed onto the battlefield exhausted.</p>
         <p>Cards which are already in-play cannot be deployed and thus are excluded.</p>
-        <p>When casting a deployed spell, the spell does not start a new chain, but instead resolves immediately as if it were a part of the ability which deployed it.</p>
+        <p>When casting a deployed spell, the spell does not start a new chain, but instead resolves immediately as if it were a part of the ability which deployed it. Additionally, the spell's activation condition is ignored; any deployed spell can be cast regardless of its activation condition.</p>
         </div>
 
         <div class="no-break">
         <h4>Destroy</h4>
         <p>To <dfn>destroy</dfn> a card is to cause it to be sent to the grave, just as if defeated by battle. This can be used to trigger effects which activate on destruction of a card.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Dice-burn</h4>
+        <p>To <dfn>dice-burn</dfn> the battlefield is to roll the indicated number of six-sided dice, assign each die to an in-play enemy minion, and inflict damage to the respective minion equal to the roll of the respective die.</p>
+        <p>Dice-burning the battlefield is similar to to the Damage Allocation step of a battle, except that you (the player dice-burning the battlefield) have full control over what enemy minions are damaged and how the dice are distributed.</p>
         </div>
 
         <div class="no-break">
@@ -301,6 +324,11 @@
         </div>
 
         <div class="no-break">
+        <h4>Enemy minion</h4>
+        <p>An <dfn>enemy minion</dfn> is a minion whose controller is any player except you, regardless of its owner.</p>
+        </div>
+
+        <div class="no-break">
         <h4>Excavate</h4>
         <p>To <dfn>excavate</dfn> cards is to pick them up from the top of your deck and see them as a part of a target selection. The cards picked up are referred to as <dfn>excavated cards</dfn>. The excavated cards are still considered to be within the deck in their original positions.</p>
         <p>You must excavate only the exact number of cards indicated. If your deck currently has fewer cards than the number of cards the ability instructs you to excavate, no cards are excavated.</p>
@@ -313,7 +341,7 @@
 
         <div class="no-break">
         <h4>Fatigue</h4>
-        <p>To <dfn>fatigue</dfn> a card means to prevent it from being affected by the Recovery Phase until its controller's next turn. This means that it will not be unexhausted, and any stat changes remain in effect, until its controller's next Recovery Phase which occurs after the end of the current turn. This effect does not stack; if 1 card is fatigued twice in a turn(s) prior to its controller's turn, this has the exact same effect as fatiguing the card once in that same timeframe.</p>
+        <p>To <dfn>fatigue</dfn> a card means to prevent it from being affected by the Recovery Phase until its controller's next turn. This means that it will not be unexhausted, and any changes to SP, HP, and level remain in effect, until its controller's next Recovery Phase which occurs after the end of the current turn. This effect does not stack; if 1 card is fatigued twice in a turn(s) prior to its controller's turn, this has the exact same effect as fatiguing the card once in that same timeframe.</p>
         </div>
 
         <div class="no-break">
@@ -400,7 +428,7 @@
 
         <div class="no-break">
         <h4>You</h4>
-        <p>As used in card text, <dfn>you</dfn> and <dfn>yourself</dfn> always refer to the player who is using the card in question, i.e. its controller or the player summoning or casting it, regardless of who its owner is. Similarly, <dfn>your</dfn> always refers to that player's field, and cards whose controller is that player.</p>
+        <p><dfn>You</dfn> and <dfn>yourself</dfn> always refer to the player who is using the card in question, i.e. its controller or the player summoning or casting it, regardless of who its owner is. Similarly, <dfn>your</dfn> always refers to that player's field, and minions whose controller is that player, regardless of who their owners are.</p>
         </div>
 
         <h3 id="banned">Refurbished and Pruned Cards</h3>
