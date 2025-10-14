@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Card Building Guide (15th Edition) - Keeper of the Cards</title>
+    <title>Card Building Guide (16th Edition) - Keeper of the Cards</title>
     <meta name="description" content="The ultimate DIY trading card game" />
     <meta name="keywords" content="kotc" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     </nav>
 
     <main>
-        <h2>Card Building Guide (15<sup>th</sup> Edition)</h2>
+        <h2>Card Building Guide (16<sup>th</sup> Edition)</h2>
         <p>This guide instructs how to design cards for Keeper of the Cards. It is written in a manner focused on precision and clarity as a reference moreso than ease of learning, so for a more gradual introduction, <a href="examples.html">Card Building Examples</a> is also available.</p>
 
         <h3>Contents</h3>
@@ -81,7 +81,7 @@
         <p>These components must be listed in that order for each ability and each sub-ability. You must choose non-redacted components from the respective section only. Within these restrictions, you may design any ability you wish. All text of the ability, including all sub-abilities, must be on the same paragraph.</p>
         <p>Many components have variables, indicated as <var>x</var>, <var>y</var>, or <var>z</var>, in them. You are to choose a number, which <em>must</em> be a <strong>positive, non-zero integer</strong> (i.e. at least 1), for each of these components, replace <var>x</var>, <var>y</var>, or <var>z</var> with the chosen number, and replace any <var>x</var>, <var>y</var>, and <var>z</var> in the component's formula with the same respective numbers.</p>
         <p>Any minion ability must be named. The name is designated at the beginning of the ability's paragraph in all capital letters, followed by a colon (&ldquo;:&rdquo;). An example would be, &ldquo;GREED: Draw 2 cards.&rdquo;</p>
-        <p>If a card is simple and has short text, you may include extra tutorial text to help teach keywords to beginners. Any tutorial text must be in parentheses and should be rendered in italics to make it clear that it is separate from the rest of the card text. For card texts where this is particularly useful, a suggested tutorial text is included.</p>
+        <p>If a card is simple and has short text, you may include extra tutorial text to help teach keywords or game mechanics to beginners. Any tutorial text must be in parentheses and should be rendered in italics to make it clear that it is separate from the rest of the card text.</p>
 
         <h4 id="inst-level">Level</h4>
         <p>A card's level is determined mathematically by considering the powers and abilities of the card. Each effect and target selection has a designated level increase formula, and each activation cost has a designated level decrease formula, listed in parentheses prior to the respective card text in the <a href="#texts">Card Texts</a> section.</p>
@@ -96,10 +96,10 @@
         <p>You can paste an image to represent your card into the &ldquo;Image&rdquo; layer. You can also indicate the copyright license and author(s) of the card and/or image via the &ldquo;Card License&rdquo; text layer.</p>
         <p>You may modify the look of the card as much as you want as long as the meaning of the meaning of the components is understood by all players. In general, it is recommended to keep it as close as possible to the official layout to avoid confusion.</p>
         <p>The standard size for cards is 2.5 inches wide and 3.5 inches tall (or 66 mm × 91 mm). You do not have to follow this size if you don't want to as long as all of your cards are the same size and appearance when viewed from the back. (You can achieve this easily with sleeves if you print in a standard card size.)</p>
-        For the back of cards, an image is provided as &ldquo;card_base/card_back.png&rdquo;. A file for a sheet of card backs is available as sets/backs.pdf; you can simply print this onto the back of a sheet which has cards printed on it. This is optional as long as sleeves are used that are opaque when viewed from the back.
+        For the back of cards, an image is provided as &ldquo;card_base/card_back.png&rdquo;. Using this is optional as long as sleeves are used that are opaque when viewed from the back.
 
         <h4 id="inst-changes">Rule/Text Changes</h4>
-        <p>Between editions, the rules and card text in Keeper of the Cards may be changed. You as a card designer need to consider these when updating old cards. See the <a href="rulebook.html#banned">Rulebook: Revised and Banned Cards section</a> for information on which cards need to be updated.</p>
+        <p>Between editions, the rules and card text in Keeper of the Cards may be changed. You as a card designer need to consider these when updating old cards. See the <a href="rulebook.html#banned">Rulebook: Refurbished and Pruned Cards section</a> for information on which cards need to be updated.</p>
 
         <h3 id="texts">Card Texts</h3>
 
@@ -109,14 +109,14 @@
             <li>&ldquo;When this card attacks, after Attack Formation (ghost-play):&rdquo;</li>
             <li>&ldquo;When this card defends, after Defense Formation (ghost-play):&rdquo;</li>
             <li>&ldquo;When this card attacks or defends, after Damage Allocation (ghost-play):&rdquo;</li>
-            <li>&ldquo;When this in-play card is ability-targeted:&rdquo;</li>
-            <li>&ldquo;When this in-play card is damaged:&rdquo;</li>
-            <li>&ldquo;When this in-play card is destroyed (ghost-play):&rdquo;</li>
-            <li>&ldquo;When this card as a resource is destroyed (hex-play):&rdquo;</li>
+            <li>&ldquo;When this on-field minion is ability-targeted:&rdquo;</li>
+            <li>&ldquo;When this on-field minion is damaged:&rdquo;</li>
+            <li>&ldquo;When this on-field minion is destroyed (ghost-play):&rdquo;</li>
+            <li>&ldquo;When this card in your granary is destroyed (hex-play):&rdquo;</li>
             <li>&ldquo;When this card in your hand is destroyed (hex-play):&rdquo;</li>
             <li>&ldquo;When this card in your deck is destroyed (hex-play):&rdquo;</li>
-            <li>&ldquo;When your in-play card(s) (excluding this card) is damaged:&rdquo;</li>
-            <li>&ldquo;When your in-play card(s) is destroyed:&rdquo;</li>
+            <li>&ldquo;When your on-field minion(s) (excluding this card) is damaged:&rdquo;</li>
+            <li>&ldquo;When your on-field minion(s) is destroyed:&rdquo;</li>
             <li>&ldquo;When a card(s) in your hand is destroyed:&rdquo;</li>
             <li>&ldquo;When a card(s) in your deck is destroyed:&rdquo;</li>
             <li>&ldquo;When you take damage:&rdquo;</li>
@@ -126,8 +126,90 @@
         <h4 id="costs">Activation Costs</h4>
         <p>Activation costs serve to reduce an ability's level by &ldquo;paying&rdquo; in other ways. Each ability can have any number of activation costs. The formula used to calculate the amount of level decrease an activation cost provides is listed in parentheses.</p>
         <p>If an activation cost does not follow any activation condition or any other activation cost within the ability, its first letter should be capitalized.</p>
-        <p>If an ability has exactly 2 activation costs, the arrow in the first activation cost is replaced by the word &ldquo;and&rdquo;. If an ability has 3 or more activation costs, all of its activation costs are connected as a comma-separated list, using the word &ldquo;and&rdquo; as a coördinating conjunction, replacing each activation cost's arrow except for the final one listed. An example would be: &ldquo;Self-exhaust 1 resource, self-destroy 1 in-play card, and self-sheathe 1 random card in your hand→&rdquo;</p>
+        <p>If an ability has exactly 2 activation costs, the arrow in the first activation cost is replaced by the word &ldquo;and&rdquo;. If an ability has 3 or more activation costs, all of its activation costs are connected as a comma-separated list, using the word &ldquo;and&rdquo; as a coördinating conjunction, replacing each activation cost's arrow except for the final one listed. An example would be: &ldquo;Self-exhaust 1 resource, self-destroy 1 on-field minion, and self-sheathe 1 random card in your hand→&rdquo;</p>
         <ul>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Remove <var>x</var> counters on this card→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mfrac>
+                        <mrow>
+                            <mi>x</mi>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-sheathe <var>x</var> cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mfrac>
+                        <mrow>
+                            <mi>x</mi>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-destroy <var>x</var> cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bury <var>x</var> cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-sheathe <var>x</var> random cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-destroy <var>x</var> random cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bury <var>x</var> random cards in your hand→&rdquo;
+            </li>
             <li>
                 <math display="inline">
                     <mtext>(</mtext>
@@ -151,7 +233,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-exhaust <var>x</var> minions→&rdquo;
+                &ldquo;self-sheathe <var>x</var> resources→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -159,43 +241,6 @@
                     <mrow>
                         <mi>x</mi>
                     </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-bounce <var>x</var> in-play cards→&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
-                        <mi>x</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-sheathe <var>x</var> random cards in your hand→&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
-                        <mn>2</mn>
-                        <mo>&InvisibleTimes;</mo>
-                        <mi>x</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-sheathe <var>x</var> in-play cards→&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mfrac>
-                        <mrow>
-                            <mi>x</mi>
-                        </mrow>
-                        <mrow>
-                            <mn>2</mn>
-                        </mrow>
-                    </mfrac>
                     <mtext>)</mtext>
                 </math>
                 &ldquo;self-destroy <var>x</var> resources→&rdquo;
@@ -204,28 +249,8 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
-                        <mi>x</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-destroy <var>x</var> random cards in your hand→&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
                         <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
-                        <mi>x</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-destroy <var>x</var> in-play cards→&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
                         <mi>x</mi>
                     </mrow>
                     <mtext>)</mtext>
@@ -236,13 +261,45 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-exhaust <var>x</var> on-field minions→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bounce <var>x</var> on-field minions→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
                         <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
                         <mi>x</mi>
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-bury <var>x</var> random cards in your hand→&rdquo;
+                &ldquo;self-sheathe <var>x</var> on-field minions→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-destroy <var>x</var> on-field minions→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -254,13 +311,25 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-bury <var>x</var> in-play cards→&rdquo;
+                &ldquo;self-bury <var>x</var> on-field minions→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;gift-summon <var>x</var> minions in your hand→&rdquo;
             </li>
         </ul>
 
         <h4 id="targeting">Target Selections</h4>
         <p>Target selections are necessary for some effects to work. They serve to designate what cards an effect is used on. Only 1 target selection can be used per ability. Every target selection sets the variable <var>t</var> for use in the cost formulas of the respective effect(s); the formula used to calculate <var>t</var> for a target selection is listed in parentheses.</p>
-        <p>If the number of targets can never be greater than 1, other words which refer to that number should be changed to singular. Additionally, the words &ldquo;up to&rdquo; should be removed in that case. For example, &ldquo;Target up to 1 in-play cards;&rdquo; should be replaced with &ldquo;Target 1 in-play card;&rdquo;.</p>
+        <p>If the number of targets can never be greater than 1, other words which refer to that number should be changed to singular. Additionally, the words &ldquo;up to&rdquo; should be removed in that case. For example, &ldquo;Target up to 1 on-field minions;&rdquo; should be replaced with &ldquo;Target 1 on-field minion;&rdquo;.</p>
         <ul>
             <li>
                 <math display="inline">
@@ -284,7 +353,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;Target up to <var>x</var> in-play cards;&rdquo;
+                &ldquo;Target up to <var>x</var> on-field minions;&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -296,7 +365,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;Target up to <var>x</var> of your resources;&rdquo;
+                &ldquo;Target up to <var>x</var> cards in your granary;&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -342,11 +411,21 @@
                     <mrow>
                         <mi>t</mi>
                         <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;See enemy's granary and target up to <var>x</var> exhausted cards therein;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
                         <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
                         <mi>x</mi>
-                        <mo>+</mo>
-                        <mn>1</mn>
                     </mrow>
                     <mtext>)</mtext>
                 </math>
@@ -414,7 +493,7 @@
                     </mfrac>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;remove up to <var>x</var> counters from each target.&rdquo;
+                &ldquo;remove up to <var>x</var> counters on each target.&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -596,7 +675,7 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
-                        <mn>3</mn>
+                        <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
                         <mi>t</mi>
                     </mrow>
@@ -630,16 +709,6 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
-                        <mi>t</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;sheathe the targets.&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
                         <mn>2</mn>
                         <mo>&InvisibleTimes;</mo>
                         <mi>t</mi>
@@ -647,6 +716,18 @@
                     <mtext>)</mtext>
                 </math>
                 &ldquo;destroy the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>3</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;sheathe the targets.&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -702,7 +783,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;summon <var>x</var> level <var>y</var> pawns.&rdquo;
+                &ldquo;craft <var>x</var> level <var>y</var> pawns.&rdquo;
             </li>
         </ul>
     </main>
