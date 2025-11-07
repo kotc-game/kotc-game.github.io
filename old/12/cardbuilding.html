@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Card Building Guide - Keeper of the Cards</title>
+    <meta name="description" content="The ultimate DIY trading card game" />
+    <meta name="keywords" content="kotc" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+            "HTML-CSS": {
+            linebreaks: { automatic: true, width: "container" }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="header">Keeper of the Cards</h1>
+
+    <main>
+        <h2>Card Building Guide (12<sup>th</sup> Edition)</h2>
+        <p>This guide instructs how to design cards for Keeper of the Cards. It is written in a manner focused on precision and clarity as a reference moreso than ease of learning, so for a more gradual introduction, <a href="examples.html">Card Building Examples</a> is also available.</p>
+
+        <h3>Contents</h3>
+        <nav>
+            <ol type="1">
+                <li><a href="#instructions">Design Instructions</a>
+                    <ol type="a">
+                        <li><a href="#inst-abilities">Constructing Abilities</a></li>
+                        <li><a href="#inst-level">Level</a></li>
+                        <li><a href="#inst-creation">Creating the Card</a></li>
+                        <li><a href="#inst-changes">Rule/Text Changes</a></li>
+                    </ol>
+                </li>
+                <li><a href="#texts">Card Texts</a>
+                    <ol type="a">
+                        <li><a href="#conditions">Activation Conditions</a></li>
+                        <li><a href="#costs">Activation Costs</a></li>
+                        <li><a href="#targeting">Target Selections</a></li>
+                        <li><a href="#effects">Effects</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+
+        <h3 id="instructions">Design Instructions</h3>
+        <p>When designing a card, you have a great deal of free reign with regard to what that card does. However, a card's level (the number indicated on top of the green circle on the bottom) is strictly defined based on what stats and abilities you give your card. As such, to create competitively viable cards, you need to strike a balance to make cards that play well, but are not prohibitively expensive to use.</p>
+        <p>There are 2 types of cards: minions, and spells.</p>
+        <ul>
+            <li>Minions have <abbr title="strength points">SP</abbr>, <abbr title="hitpoints">HP</abbr>, and any number of abilities. SP and HP must each be no lower than 0.</li>
+            <li>Spells have only a single ability.</li>
+        </ul>
+
+        <h4 id="inst-abilities">Constructing Abilities</h4>
+        <p>Abilities are the one gameplay element that all types of card can have. An ability is composed of the following components:</p>
+        <ol>
+            <li>1 activation condition from the <a href="#conditions">Activation Conditions</a> section (optional)</li>
+            <li>1 or more activation costs from the <a href="#costs">Activation Costs</a> section (optional)</li>
+            <li>1 or more sub-abilities (required)</li>
+        </ol>
+        <p>A <dfn>sub-ability</dfn> is composed of the following components:</p>
+        <ol>
+            <li>1 target selection from the <a href="#targeting">Target Selections</a> section (optional)</li>
+            <li>1 or more effects from the <a href="#effects">Effects</a> section (required)</li>
+        </ol>
+        <p>These components must be listed in that order for each ability and each sub-ability. You must choose non-redacted components from the respective section only. Within these restrictions, you may design any ability you wish. All text of the ability, including all sub-abilities, must be on the same paragraph.</p>
+        <p>Many components have variables, indicated as <var>x</var>, <var>y</var>, or <var>z</var>, in them. You are to choose a number for each of these components, replace <var>x</var>, <var>y</var>, or <var>z</var> with the chosen number, and replace any <var>x</var>, <var>y</var>, and <var>z</var> in the component's formula with the same respective numbers. Variable amounts must be positive, non-zero integers.</p>
+        <p>Any minion ability must be named. The name is designated at the beginning of the ability's paragraph in all capital letters, followed by a colon (&ldquo;:&rdquo;). An example would be, &ldquo;GREED: Draw 2 cards.&rdquo;</p>
+        <p>If a card is simple and has short text, you may include extra tutorial text to help teach keywords to beginners. Any tutorial text must be in parentheses and should be rendered in italics to make it clear that it is separate from the rest of the card text. For card texts where this is particularly useful, a suggested tutorial text is included.</p>
+
+        <h4 id="inst-level">Level</h4>
+        <p>A card's level is determined mathematically by considering the powers and abilities of the card. Each effect and target selection has a designated level increase formula, and each activation cost has a designated level decrease formula, listed in parentheses prior to the respective card text in the <a href="#texts">Card Texts</a> section.</p>
+        <p>To determine a sub-ability level, take the sum of all effect level increase formulas corresponding to effect texts used in the sub-ability. To determine a spell or ability level, add together the spell or ability's sub-ability levels, then if the ability has an activation cost, subtract the activation cost level decrease calculated by the level decrease formula. Round the result up to the next integer if it isn't one already. If less than 1, set to 1.</p>
+        <p>To determine the level of a minion, add together the minion's SP and one fifth of its HP and round up to the next integer if it isn't one already. If less than 0, set to 0. Then, add the levels of all of the minion's abilities to the minion's level.</p>
+
+        <h4 id="inst-creation">Creating the Card</h4>
+        <p>Once you have decided the parameters of your card and calculated the level, edit &ldquo;card.xcf&rdquo; in an image editor that supports the format (such as the GNU Image Manipulation Program or Photoshop), and edit the text fields appropriately. Make sure the &ldquo;Minion Template&rdquo; layer is visible while the &ldquo;Spell Template&rdquo; layer is invisible if designing a minion, or vice-versa if designing a spell. If designing a spell, also make sure to remove the SP and HP numbers from the bottom-left and bottom-right of the card, respectively.</p>
+        <p>If the card is a spell and has an activation condition, you should make the &ldquo;Play Restriction&rdquo; layer visible. This is meant to help avoid mistakes during gameplay which give away hand knowledge.</p>
+        <p>You can paste an image to represent your card into the &ldquo;Image&rdquo; layer. You can also indicate the copyright license and author(s) of the card and/or image via the &ldquo;Card License&rdquo; text layer.</p>
+        <p>You may modify the look of the card as much as you want as long as the meaning of the meaning of the components is understood by all players. In general, it is recommended to keep it as close as possible to the official layout to avoid confusion.</p>
+        <p>The standard size for cards is 2.5 inches wide and 3.5 inches tall (or 66 mm × 91 mm). You do not have to follow this size if you don't want to as long as all of your cards are the same size and appearance when viewed from the back. (You can achieve this easily with sleeves if you print in a standard card size.)</p>
+        For the back of cards, an image is provided as &ldquo;card_base/card_back.png&rdquo;. A file for a sheet of card backs is available as sets/backs.pdf; you can simply print this onto the back of a sheet which has cards printed on it. This is optional as long as sleeves are used that are opaque when viewed from the back.
+
+        <h4 id="inst-changes">Rule/Text Changes</h4>
+        <p>Between editions, the rules and card text in Keeper of the Cards may be changed. You as a card designer need to consider these when updating old cards. See the <a href="rulebook.html#banned">Rulebook: Revised and Banned Cards section</a> for information on which cards need to be updated.</p>
+
+        <h3 id="texts">Card Texts</h3>
+
+        <h4 id="conditions">Activation Conditions</h4>
+        <p>Activation conditions indicate special conditions under which the spell or ability is to be activated. If a spell or ability has an activation condition, it may only be activated under that condition. Otherwise, it may only be activated during your own action phase. Only one activation condition can be used per ability.</p>
+        <ul>
+            <li>&ldquo;When this card attacks, after Attack Formation (ghost-play):&rdquo;</li>
+            <li>&ldquo;When this card defends, after Defense Formation (ghost-play):&rdquo;</li>
+            <li>&ldquo;When this in-play card is ability-targeted:&rdquo;</li>
+            <li>&ldquo;When this in-play card is damaged:&rdquo;</li>
+            <li>&ldquo;When this in-play card is destroyed (ghost-play):&rdquo;</li>
+            <li>&ldquo;When this card as a resource is destroyed (ghost-play, must pay resource cost):&rdquo;</li>
+            <li>&ldquo;When this card in your hand is destroyed (ghost-play, must pay resource cost):&rdquo;</li>
+            <li>&ldquo;When this card in your deck is destroyed (ghost-play, must pay resource cost):&rdquo;</li>
+            <li>&ldquo;When your in-play card(s) (excluding this card) is damaged:&rdquo;</li>
+            <li>&ldquo;When your in-play card(s) is destroyed:&rdquo;</li>
+            <li>&ldquo;When a card(s) in your hand is destroyed:&rdquo;</li>
+            <li>&ldquo;When a card(s) in your deck is destroyed:&rdquo;</li>
+            <li>&ldquo;When you take damage:&rdquo;</li>
+            <li>&ldquo;When an opponent attacks, after Attack Formation:&rdquo;</li>
+        </ul>
+
+        <h4 id="costs">Activation Costs</h4>
+        <p>Activation costs serve to reduce an ability's level by &ldquo;paying&rdquo; in other ways. Each ability can have any number of activation costs. The formula used to calculate the amount of level decrease an activation cost provides is listed in parentheses.</p>
+        <p>If an activation cost does not follow any activation condition or any other activation cost within the ability, its first letter should be capitalized.</p>
+        <p>Consecutive activation costs in an ability are connected with a comma followed by the word &ldquo;also&rdquo;, replacing the arrow of the preceding activation cost. An example would be: &ldquo;Self-exhaust 1 resource, also self-destroy 1 in-play card→&rdquo;</p>
+        <ul>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mfrac>
+                        <mrow>
+                            <mi>x</mi>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-exhaust <var>x</var> resources→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-exhaust <var>x</var> minions→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bounce <var>x</var> in-play cards→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-sheathe <var>x</var> random cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-sheathe <var>x</var> in-play cards→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mfrac>
+                        <mrow>
+                            <mi>x</mi>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-destroy <var>x</var> resources→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-destroy <var>x</var> random cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-destroy <var>x</var> in-play cards→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bury <var>x</var> resources→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bury <var>x</var> random cards in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>4</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;self-bury <var>x</var> in-play cards→&rdquo;
+            </li>
+        </ul>
+
+        <h4 id="targeting">Target Selections</h4>
+        <p>Target selections are necessary for some effects to work. They serve to designate what cards an effect is used on. Only 1 target selection can be used per ability. Every target selection sets the variable <var>t</var> for use in the cost formulas of the respective effect(s); the formula used to calculate <var>t</var> for a target selection is listed in parentheses.</p>
+        <p>If the number of targets can never be greater than 1, other words which refer to that number should be changed to singular. Additionally, the words &ldquo;up to&rdquo; should be removed in that case. For example, &ldquo;Target up to 1 in-play cards;&rdquo; should be replaced with &ldquo;Target 1 in-play card;&rdquo;.</p>
+        <ul>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target this card;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> in-play cards;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> of your resources;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> cards in any graveyard randomly;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> cards in any hand randomly;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> cards in your hand;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                        <mo>+</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;See one opponent's hand and target up to <var>x</var> cards therein;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> cards on the top of any deck;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mi>x</mi>
+                                <mo>+</mo>
+                                <mn>4</mn>
+                                <mo>&InvisibleTimes;</mo>
+                                <mi>y</mi>
+                            </mrow>
+                            <mrow>
+                                <mn>5</mn>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Excavate <var>x</var> cards and target up to <var>y</var> excavated cards;&rdquo;
+            </li>
+        </ul>
+
+        <h4 id="effects">Effects</h4>
+        <p>Effects are the main component of abilities, and at least 1 is required for any given ability. The formula used to calculate the level increase an effect causes is listed in parentheses. Note: the variable <var>t</var> is given by the formula of the target selection used in the respective sub-ability (see <a href="#targeting">Target Selections</a>).</p>
+        <p>If an effect does not follow any target selection or any other effect within the sub-ability, its first letter should be capitalized.</p>
+        <p>If a number is never greater than 1, other words which refer to that number should be changed to singular. Additionally, the following substitutions are recommended if the number of targets is never greater than 1:</p>
+        <ul>
+            <li>&ldquo;Each target&rdquo; and &ldquo;the targets&rdquo; should be replaced with &ldquo;the target&rdquo;, or alternatively, they can be replaced with &ldquo;it&rdquo; if the meaning of the effect is not made ambiguous by doing so.</li>
+            <li>&ldquo;Each target's&rdquo; and &ldquo;the targets'&rdquo; should be replaced with &ldquo;the target's&rdquo;, or alternatively, they can be replaced with &ldquo;its&rdquo; if the meaning of the effect is not made ambiguous by doing so.</li>
+        </ul>
+        <p>Consecutive effects in a sub-ability are connected with a comma followed by the word &ldquo;then&rdquo; or &ldquo;also&rdquo;. An example would be: &ldquo;Draw 1 card, then destroy the targets.&rdquo;</p>
+        <ul>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mfrac>
+                        <mrow>
+                            <mi>x</mi>
+                            <mo>&InvisibleTimes;</mo>
+                            <mi>t</mi>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;remove up to <var>x</var> counters from each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;place <var>x</var> Sword Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;place <var>x</var> Shield Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;place <var>x</var> Weakness Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;place <var>x</var> Damage Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;place <var>x</var> Exhaustion Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;place <var>x</var> Dice Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;down-level each target by <var>x</var>.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;reveal and deploy the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;exhaust and fatigue the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;bounce the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>3</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;silo the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;hypnotize the targets until the end of this turn.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;sheathe the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;destroy the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>4</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;bury the targets.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;draw <var>x</var> cards.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;<var>x</var>-dice-heal yourself.&rdquo;
+            </li>
+        </ul>
+    </main>
+
+    <div class="footer">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rulebook - Keeper of the Cards</title>
+    <meta name="description" content="The ultimate DIY trading card game" />
+    <meta name="keywords" content="kotc" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+
+<body>
+    <h1 class="header">Keeper of the Cards</h1>
+
+    <main>
+        <h2>Rulebook (13<sup>th</sup> Edition)</h2>
+
+        <p>Keeper of the Cards is a trading card game, loosely inspired by elements from various popular trading card games you may be familiar with. The primary distinguishing factor of Keeper of the Cards, however, is that you don't just trade cards; you <em>create</em> cards.</p>
+
+        <p>Unlike other trading card games, there are no official cards for Keeper of the Cards. Instead, there are official effect components that can be used for cards and official rules for calculating the cost of playing any given card. These rules are laid out separately in the <a href="cardbuilding.html">Card Building Guide</a>.</p>
+
+        <p>This document, on the other hand, serves to explain the rules of the game.</p>
+
+        <div class="no-break">
+        <h3 id="toc" class="no-break-before">Contents</h3>
+        <nav>
+            <ol type="1">
+                <li><a href="#cardtypes">Card Types and Layout</a></li>
+                <li><a href="#setup">Setup and Deck Building</a></li>
+                <li><a href="#field">Fields</a></li>
+                <li><a href="#turnorder">Turn Order</a></li>
+                <li><a href="#resources">Exhaustion and Recovery</a></li>
+                <li><a href="#abilities">Abilities</a></li>
+                <li><a href="#minions">Minions</a></li>
+                <li><a href="#spells">Spells</a></li>
+                <li><a href="#counters">Counters</a></li>
+                <li><a href="#chains">Chains</a></li>
+                <li><a href="#battles">Battles</a></li>
+                <li><a href="#winning">Endgame</a></li>
+                <li><a href="#keywords">Keywords</a></li>
+                <li><a href="#banned">Refurbished and Pruned Cards</a>
+                    <ol type="a">
+                        <li><a href="#cleanslate">Clean Slate Edition</a></li>
+                        <!--<li><a href="#refurbished">Refurbished Card Texts</a></li>-->
+                        <!--<li><a href="#redacted">Redacted Ability Texts</a></li>-->
+                        <!--<li><a href="#costs">Revised Cost Texts</a></li>-->
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+        </div>
+
+        <h3 id="cardtypes">Card Types and Layout</h3>
+        <p>There are 2 types of cards in Keeper of the Cards: minions, and spells. Here are some examples of both:</p>
+        <img class="example" src="images/card_examples.png" alt="Visual of 2 cards: 1 minion and 1 spell.">
+        <p>The card on the left is a minion, and the card on the right is a spell. They are visually very similar; the only noteworthy difference is that spells have a pair of triangles instead of the additional elements found on a minion.</p>
+        <p>The elements marked on the cards are:</p>
+        <ol>
+            <li>The name of the card. This is purely cosmetic and has no effect on the game.</li>
+            <li>The card image. This is purely cosmetic and has no effect on the game.</li>
+            <li>The ability text of the card.</li>
+            <li>Edition Indicator indicating the edition of the game the card was designed for.</li>
+            <li>The level of the card.</li>
+            <li>The flavor text of the card. This is purely cosmetic and has no effect on the game.</li>
+            <li>The <abbr title="strength points">SP</abbr> of the card.</li>
+            <li>The <abbr title="hitpoints">HP</abbr> of the card.</li>
+        </ol>
+
+        <h3 id="setup">Setup and Deck Building</h3>
+        <p>Prior to starting a game of Keeper of the Cards, you must assemble a deck. The deck must contain 40&ndash;60 cards. All cards must look the same from the back (this can be achieved by using sleeves if necessary). Other than that, there are no restrictions on what legal cards you can put in your deck.</p>
+        <p>You can find preëxisting sets of example cards, as well as instructions for how to print them, in the <a href="https://kotc-game.github.io/play.html">Starter Set</a>.</p>
+        <p>Before each game, shuffle your deck. You begin the game with 35 <abbr title="hitpoints">HP</abbr>, which you can note on a piece of paper or thru some other counter. Draw 5 cards; to <dfn>draw</dfn> a card is to take the topmost card from your deck and add that card to your hand. Once, optionally, you may then <dfn>bury</dfn> – place on the bottom of your deck in any order – any number of cards in your hand, then draw a number of cards equal to the number of cards buried.</p>
+        <p>You should have a reasonable amount of six-sided dice (preferably at least 10&ndash;20 dice), and some objects such as coins or poker chips to use as counters. You must also determine who goes first. One suggested method is for each player to roll 2 six-sided dice and for the player with the highest roll to go first.</p>
+        <p>Keeper of the Cards can be played by 2 or more players. There is theoretically no limit, but it is recommended to keep the number of players small, preferably between 2 and 8. In the case of a game with more than 2 players, each player works alone with their own HP and field.</p>
+
+        <h3 id="field">Fields</h3>
+        <img class="example" src="images/zones.png" alt="">
+        <p>Each player has a <dfn>field</dfn>: a designated area where cards are played, divided into several distinct <dfn>zones</dfn> which each have a specific purpose. Each zone's contents are classified as either <dfn>public knowledge</dfn>, in which case all players are entitled to know what cards are in the zone; <dfn>private knowledge</dfn>, in which case all players are entitled to know the number of cards in the zone, but only its owner is entitled to know what cards are in the zone; or <dfn>restricted knowledge</dfn>, in which case all players are entitled to know the number of cards in the zone, but no player (not even its owner) is entitled to know what cards are in the zone. The zones are as follows:</p>
+        <ul>
+            <li>Deck: Typically below the grave, to the right of the granary. The contents of the deck are restricted knowledge.</li>
+            <li>Grave: Typically above the deck, to the right of the battlefield. Any card which is <dfn>destroyed</dfn> is immediately sent here, face-down. The contents of the grave are private knowledge.</li>
+            <li>Battlefield: Typically above the granary, to the left of the grave. Contains its owner's in-play minions. The contents of the battlefield are public knowledge.</li>
+            <li>Granary: Typically below the battlefield. Contains its owner's resources. The contents of the granary are private knowledge.</li>
+            <li>Hand: Typically held in the hand. Contains the cards its owner currently has available to play. The contents of the hand are private knowledge.</li>
+        </ul>
+
+        <h3 id="turnorder">Turn Order</h3>
+        <p>Each turn in Keeper of the Cards consists of the following phases:</p>
+        <ol>
+            <li><dfn>Draw Phase</dfn>: Draw 1 card.
+                <ul>
+                    <li><b>Special exception</b>: on the first turn of the game, the player who goes first skips this phase.</li>
+                </ul>
+            </li>
+            <li><dfn>Resource Phase</dfn>: You may optionally sow 1 resource. A resource is <dfn>sowed</dfn> by placing any card from your hand into the granary unexhausted (oriented vertically) and face-down.</li>
+            <li><dfn>Action Phase</dfn>: You may play any cards from your hand that you are able to, and you may also activate in-play minion abilities. See <a href="#minions">Minions</a> and <a href="#spells">Spells</a> for more information.</li>
+            <li><dfn>Battle Phase</dfn>: You may do battle with your unexhausted minions. See <a href="#battles">Battles</a> for more information.</li>
+            <li><dfn>Recovery Phase</dfn>: Every in-play card and every resource (for all players) is unexhausted. Every in-play minion has its SP, HP, and level reset to the respective values printed on the card (reversing any damage or stat changes due to card abilities).</li>
+        </ol>
+
+        <h3 id="resources">Exhaustion and Recovery</h3>
+        <p><dfn>Exhausted</dfn>, for any card, means that the card cannot currently be used; this is marked by having the card in a horizontal (sideways) orientation. By contrast, <dfn>unexhausted</dfn> means that the card can currently be used; this is marked by having the card in a vertical (upright) orientation. To exhaust a card, rotate it to a horizontal orientation. To unexhaust a card, rotate it to a vertical orientation. Cards are only unexhausted during the Recovery Phase.</p>
+        <p>All cards inherently have a <dfn>resource cost</dfn>. To pay a card's resource cost is to exhaust a number of unexhausted resources in your granary equal to its level. For example, to pay the resource cost of a level 3 card, exhaust 3 of your currently unexhausted resources by turning them sideways.</p>
+        <p>During the Recovery Phase, all cards in every player's battlefield and granary are unexhausted. In addition, every minion in every player's battlefield has its SP, HP, and level returned to the respective values printed on it. This effectively reverses any stat changes that might have happened, including damage. As such, these stat changes effectively last only for the turn in which they take effect, even thô this is not explicitly stated in card effects.</p>
+
+        <h3 id="abilities">Abilities</h3>
+        <p>A card's <dfn>abilities</dfn> are indicated in the ability text. Each ability is composed of the following components in the following order:</p>
+        <ol>
+            <li><dfn>Ability name</dfn> (minion abilities only): The name of the minion ability, designated with all capital letters. Has no effect on gameplay.</li>
+            <li><dfn>Activation condition</dfn>: Indicates when the ability can be activated, followed by a colon (:). If no explicit activation condition is present, the ability's activation condition is the <dfn>standard activation condition</dfn>, meaning it may be used only during your own Action Phase.</li>
+            <li><dfn>Activation cost</dfn>: Indicates a special cost paid upon activation of the ability, followed by an arrow (→). If you activate an ability you are unable to pay the activation cost for, the ability has no effect.</li>
+            <li><dfn>Sub-abilities</dfn>: Composed of an optional <dfn>target selection</dfn>, indicating what cards are treated as targets for the sub-ability, and 1 or more <dfn>effects</dfn>, indicating what the sub-ability does. Each ability can have any number of sub-abilities; each sub-ability is a separate sentence.</li>
+        </ol>
+        <p>Abilities whose activation condition is met can be <dfn>activated</dfn>. The way to do this depends on card type, but once an ability is activated, perform the following steps.</p>
+        <ol>
+            <li>Immediately pay any activation cost. If you cannot, the ability fails. Otherwise, the ability becomes a chain link and either starts or continues a chain. (See <a href="#chains">Chains</a> for more information.)</li>
+            <li>Wait for the ability to resolve in the chain. When it does, do what every sub-ability says to do in sequence. If any effect is impossible as stated on the card text, it does nothing.</li>
+        </ol>
+        <p>Many abilities make use of special keywords; see <a href="#keywords">Keywords</a> for a list of explanations for all of these keywords.</p>
+
+        <h3 id="minions">Minions</h3>
+        <p><dfn>Minions</dfn> are cards which are used to do battle and may also have special abilities. Minions must be <dfn>summoned</dfn> from your hand to the battlefield before they can be used, but once they are summoned, they can be used indefinitely as long as they remain on the battlefield.</p>
+        <p>To summon a minion, pay a number of resources equal to the card's level, and then place it, face-up and exhausted, into the battlefield. (See <a href="#resources">Exhaustion and Recovery</a> for more information about resources and exhaustion.)</p>
+        <p>Minions can have any number of abilities. Each ability is designated on a separate paragraph, with a name indicated. To activate a minion ability whose activation condition is met, the minion must be in-play and you must exhaust it, unless the ability has ghost-play. After that, perform the steps described for activation of an ability in <a href="#abilities">Abilities</a>.</p>
+        <p>Additionally, minions have <dfn><abbr title="strength points">SP</abbr></dfn> &ndash; the minion's capability for inflicting damage in battles; and <dfn><abbr title="hitpoints">HP</abbr></dfn> &ndash; the minion's tolerance for taking damage. <dfn>Damage</dfn> is the reduction of a player's or minion's HP by a given amount. When a minion takes an amount of damage greater than or equal to its HP, it is destroyed. Additionally, if the amount of damage is greater than the minion's HP, the difference is inflicted as <dfn>piercing damage</dfn> to its controller. For example, if 6 damage is inflicted to a minion with 4 HP, the minion will be destroyed and its controller will take 2 HP of piercing damage.</p>
+        <p>Note: it is possible for a minion to initially have 0 HP; in such a case, any amount of damage will destroy the minion and be inflicted to its controller in full as piercing damage.</p>
+        <p>Damage is central to battles, which all minions can participate in; see <a href="#battles">Battles</a> for more information.</p>
+        <p>Minions can also hold counters; see <a href="#counters">Counters</a> for more information.</p>
+
+        <h3 id="spells">Spells</h3>
+        <p><dfn>Spells</dfn> are cards that only have a single ability. Spells can be <dfn>cast</dfn> from your hand. To cast a spell whose activation condition is met, pay its resource cost, reveal the spell to all other players (at this point the spell does not exist in any zone), perform the steps described for activation of an ability in <a href="#abilities">Abilities</a>, and then send the spell to the grave.</p>
+
+        <h3 id="counters">Counters</h3>
+        <p>A <dfn>counter</dfn> is an element, generally represented by arbitrary objects such as coins or Poker ships, which can be placed on an in-play minion, preparing an effect for future use. It stays on the minion it is placed on until either the minion is moved to a zone other than the battlefield, an ability removes the counter, or the counter's effect is triggered.</p>
+        <p>There are several different types of counters, each of which has a different effect. These effects broadly are classified into two categories: proactive counter effects, and reactive counter effects.</p>
+        <ul>
+            <li>A <dfn>proactive</dfn> counter effect starts a chain or, alternatively, responds to existing chain, similar to abilities. However, it can be triggered in any phase of any player's turn, restricted only by chain rules. See <a href="#chains">Chains</a> for more information.</li>
+            <li>A <dfn>reactive</dfn> counter effect does not start a chain or respond to a chain, and is not restricted by chain rules. However, it can only be triggered in specific circumstances.</li>
+        </ul>
+        <p>Additionally, the following rules apply to all counters:</p>
+        <ul>
+            <li>Removing counters for their effects does <strong>not</strong> require exhausting the minion it is on since the effect is that of the counter, not of the minion.</li>
+            <li>The player who placed a counter is considered to be the counter’s &ldquo;owner&rdquo; and &ldquo;controller&rdquo; and is the one who can remove it for its effect, regardless of who the controller of the minion is. For example, if you place one of these counters on a minion controlled by another player, it is you who can then remove the counters to trigger the effect, and other players – including the minion's controller – cannot do so. Note that this restriction only applies to the effect of the counter itself; there is no restriction on how any counter, including a counter with an effect, can be removed for an activation cost or by a card effect.</li>
+            <li>Removing the counter to trigger its effect is treated the same as an activation cost of an ability, and thus is done immediately when the effect is triggered.</li>
+        </ul>
+        <div class="no-break">
+        <p>Following is a list of counter types which are currently available, and an explanation of each counter type's effect. Note: &ldquo;the card&rdquo; refers here to the card that the counter was removed from.</p>
+        <ul>
+            <li><dfn>Sword Counter</dfn> (proactive): Increase the card’s SP by 1.</li>
+            <li><dfn>Shield Counter</dfn> (reactive): When the card would take damage, reduce the damage taken by 2.</li>
+            <li><dfn>Weakness Counter</dfn> (proactive): Decrease the card’s SP by 1.</li>
+            <li><dfn>Damage Counter</dfn> (proactive): Roll a six-sided die and inflict damage to the card equal to the result.</li>
+            <li><dfn>Exhaustion Counter</dfn> (proactive): Exhaust the card.</li>
+            <li><dfn>Dice Counter</dfn> (reactive): When a die is rolled (no matter who rolled the die initially), re-roll it.</li>
+        </ul>
+        </div>
+
+        <h3 id="chains">Chains</h3>
+        <p>Due to activation conditions on abilities and the nature of how counters work, it is possible for multiple players to simultaneously be able to perform certain actions. <dfn>Chains</dfn> exist to clarify what exactly happens in these situations.</p>
+        <p>The following actions are all <dfn>chaining actions</dfn>, meaning they can start or respond to a chain:</p>
+        <ul>
+            <li>Activating a minion's ability whose activation condition is met.</li>
+            <li>Casting a spell whose activation condition is met.</li>
+            <li>Removing a counter to trigger its proactive counter effect.</li>
+        </ul>
+        <p>When a chaining action is performed and it isn't in response to an existing chain, a new chain starts and said chaining action becomes the first <dfn>chain link</dfn> of said chain. Then, all players, starting with the player to the left of the player who started the chain and then going clockwise, are given an opportunity to respond to the chain by performing chaining actions of their own. If any player decides to respond to the chain, all players are again given the opportunity to respond to the chain, this time starting with the player to the left of the player who last responded and then going clockwise. This process is repeated until all players consecutively decide not to respond to the chain.</p>
+        <p>Whenever any chaining action is performed, any applicable activation cost is paid immediately. Effects, however, are not executed immediately. Instead, once all players are done responding to the chain, the chain begins <dfn>resolving</dfn>: in reverse order (starting with the most recent chain link and working backwards), each chain link's effects are actually executed, which is referred to as <dfn>resolving</dfn> the effects.</p>
+        <p>For example, when resolving a chain where chain link 1 is an ability with the effect, &ldquo;Destroy the targets,&rdquo;, and chain link 2 is the effect of a Weakness Counter, then resolution of the chain goes as follows:</p>
+        <ol>
+            <li>The effect of the Weakness Counter removed for chain link 2 resolves, decreasing the SP of the card it was on by 1.</li>
+            <li>The effect of the ability activated for chain link 1 resolves, destroying the cards it targeted.</li>
+        </ol>
+        <p>Only 1 chain can be active at a time, and no chaining actions can be performed while a chain is resolving; if a chain is resolving, any player who wishes to perform a chaining action must wait until the chain finishes resolving, and can then start a new chain.</p>
+
+        <h3 id="battles">Battles</h3>
+        <p>To battle, go thru the following steps (only during the attacking player's Battle Phase):</p>
+        <ol>
+            <li><dfn>Attack Formation</dfn>: The attacking player exhausts any number of their unexhausted minions, which become the <dfn>attacking team</dfn>, and declares 1 <dfn>victim</dfn>: a player or a minion which the attacker wants to inflict damage to. Any given player or minion can only be declared as a victim once per Battle Phase. The player declared as a victim, or the controller of the minion declared as a victim, becomes the <dfn>defending player</dfn>. The attacking player selects and announces the <dfn>formation order</dfn> of the attacking team &ndash; the order in which these minions will take damage.</li>
+            <li><dfn>Defense Formation</dfn>: The defending player may exhaust any number of their own unexhausted minions (which may or may not include the victim itself), which become the <dfn>defending team</dfn>. If they do this, they then select and announce the formation order of the defending team.</li>
+            <li><dfn>Damage Allocation</dfn>: The attacking player rolls a number of six-sided dice equal to the total SP of the attacking team, and the defending player rolls a number of six-sided dice equal to the total SP of the defending team. Then, each player must take each of their rolled dice, 1 at a time (in any order), and inflict the result as damage to the next surviving minion in the other player's team (based on the respective formation order selected) until either all dice are used or all minions in the respective team are destroyed. If any of the attacking team's dice remain, inflict the total result of these remaining dice as damage to the victim, or if the victim is a minion which is no longer in-play, to the victim's controller instead.</li>
+        </ol>
+        <p>For the purposes of timing, everything which occurs in each step is considered to occur simultaneously. As such, any action which starts a chain cannot be taken during one of the steps and must wait until the respective step is completed.</p>
+        <p>During your Battle Phase, you may initiate as many battles as you want to as long as you have unexhausted minions remaining and valid potential victims remain.</p>
+
+        <h3 id="winning">Endgame</h3>
+        <p>The game ends when any of the following <dfn>endgame conditions</dfn> are met:</p>
+        <ul>
+            <li>When all players have 0 HP.</li>
+            <li>When all players but 1 have 0 HP.</li>
+            <li>When any player is made to draw a card while their deck is empty.</li>
+            <li>When all players agree that there is no reason to continue the game.</li>
+        </ul>
+        <p>A player's HP cannot be be lower than 0. Until an endgame condition is met, players with 0 HP, referred to as <dfn>zombie players</dfn>, continue to play as normal. Zombie players can regain a chance at winning the game by gaining HP before an endgame condition is met.</p>
+        <p>Once the game ends, use the following criteria to determine the winner. For each criterion, if it designates a single player, that player is considered the winner. Otherwise, check the next criterion only with the players who passed the previous criterion. If all criteria fail to designate a single player, the game ends in a tie between all players who were designated by the criteria.</p>
+        <ol>
+            <li>The player who was not made to draw while their deck was empty.</li>
+            <li>The player with the most HP.</li>
+            <li>The player whose in-play minions' total combined levels is the highest.</li>
+            <li>The player with the largest number of cards in their deck.</li>
+        </ol>
+
+        <h3 id="keywords">Keywords</h3>
+        <p>This section lists common keywords used in card text, including any important nuances for said keywords.</p>
+
+        <div class="no-break">
+        <h4>Ability-targeted</h4>
+        <p>A card is <dfn>ability-targeted</dfn> when it is selected as a target for any ability.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Attack</h4>
+        <p>A minion <dfn>attacks</dfn> when it is selected and exhausted by an attacking player to include it in an attacking team.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Bounce</h4>
+        <p>To <dfn>bounce</dfn> a card is to place it in its owner's hand.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Bury</h4>
+        <p>To <dfn>bury</dfn> a card is to place it on the bottom of its owner's deck. When burying multiple cards at once, you choose the order.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Controller</h4>
+        <p>The <dfn>controller</dfn> of a card is the player whose zone it is in, regardless of who its owner is. So for example, if you use an effect to summon a minion owned by another player, you are its controller while it remains in your battlefield and can use it the same way as minions in your battlefield owned by you.</p>
+        <p>When the controller of a card changes (as can happen with the hypnotize effect), its location is implicitly changed to the field of its new controller, in the zone it was in when its controller changed. For example, if a minion in the battlefield of player 1 is hypnotized and its controller changed to player 2, it is moved to the battlefield of player 2.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Counter</h4>
+        <p>See <a href="#counters">Counters</a> for an explanation of what counters are and how they work.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Damage</h4>
+        <p>A minion is <dfn>damaged</dfn> when any amount of damage greater than 0 is inflicted to it.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Defend</h4>
+        <p>A minion <dfn>defends</dfn> when it is selected and exhausted by a defending player to include it in a defending team.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Deploy</h4>
+        <p>To <dfn>deploy</dfn> a card means to play it as if it was in your hand. This is optional for each deployed target. In other words, it means for each deployed target, you may (but are not required to) do one of the following:</p>
+        <ol>
+            <li>Summon the card (if it is a minion).</li>
+            <li>Cast the card (if it is a spell).</li>
+        </ol>
+        <p>Just as when playing the card normally, you must pay all usual costs, including any applicable activation costs for spells, and any minion summoned is placed onto the battlefield exhausted.</p>
+        <p>Cards which are already in-play cannot be deployed and thus are excluded.</p>
+        <p>When casting a deployed spell, the spell does not start a new chain, but instead resolves immediately as if it were a part of the ability which deployed it.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Destroy</h4>
+        <p>To <dfn>destroy</dfn> a card is to cause it to be sent to the grave, just as if defeated by battle. This can be used to trigger effects which activate on destruction of a card.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Dice-heal</h4>
+        <p>To <dfn>dice-heal</dfn> a player is to roll the indicated number of six-sided dice and increase their HP by the total indicated on the dice. For example, to 3-dice-heal a player, roll 3 six-sided dice; if the results of the dice are 4, 1, and 3, the player gains 8 HP.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Down-level</h4>
+        <p>To <dfn>down-level</dfn> a card is to subtract the amount from the card's level. A card's level can never be less than 0.</p>
+        <p>The down-level effect persists for the card until the Recovery Phase, regardless of where the card was when it was down-leveled and where it moves to.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Draw</h4>
+        <p>To <dfn>draw</dfn> a card is to take the topmost card from your deck and add that card to your hand.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Each</h4>
+        <p>When the term <dfn>each</dfn> is used to refer to targets, it means that each target is affected separately, e.g. any decision required by the effect is made for each card separately (and thus can differ between them).</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Enemy</h4>
+        <p><dfn>Enemy</dfn> means any player except for yourself, chosen by you if there is a choice to be made.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Excavate</h4>
+        <p>To <dfn>excavate</dfn> cards is to pick them up from the top of your deck and see them as a part of a target selection. The cards picked up are referred to as <dfn>excavated cards</dfn>. The excavated cards are still considered to be within the deck in their original positions.</p>
+        <p>You must excavate only the exact number of cards indicated. If your deck currently has fewer cards than the number of cards the ability instructs you to excavate, no cards are excavated.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Exhaust</h4>
+        <p>To <dfn>exhaust</dfn> a card means to turn it sideways. Conversely, to <dfn>unexhaust</dfn> a card means to turn it upright. Only in-play cards and resources can be exhausted.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Fatigue</h4>
+        <p>To <dfn>fatigue</dfn> a card means to prevent it from being affected by the Recovery Phase until its controller's next turn. This means that it will not be unexhausted, and any stat changes remain in effect, until its controller's own Recovery Phase. This effect does not stack; if 1 card is fatigued twice in a turn(s) prior to its controller's turn, this has the exact same effect as fatiguing the card once in that same timeframe.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Ghost-play</h4>
+        <p>Found in activation conditions, an ability with <dfn>ghost-play</dfn> can be activated regardless of where the card is and, for minions, does not require exhaustion.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Hypnotize</h4>
+        <p>To <dfn>hypnotize</dfn> a card means to change its controller to you; this moves it to your field and allows you to use it as if it was your own card. Only in-play minions can be hypnotized. When the hypnotize effect ends, the hypnotized card's controller is changed back to the controller it had prior to the hypnotize effect resolving.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>In-play</h4>
+        <p>The term <dfn>in-play</dfn> refers exclusively to non-destroyed minions in the battlefield. Minions cease being in-play the moment they are destroyed or otherwise moved to any location other than the battlefield.</p>
+        <p>Resources are never considered to be in-play under any circumstance. Additionally, spells are not considered to be in-play at any point.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>It</h4>
+        <p>The term <dfn>it</dfn> within an ability refers to the ability's target. The term is used only in cases where the ability can only ever have a single target.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Owner</h4>
+        <p>The <dfn>owner</dfn> of a card is always the player whose deck it originates from, regardless of who its controller is.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Reveal</h4>
+        <p>To <dfn>reveal</dfn> a card is to show it to all players, including yourself.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>See</h4>
+        <p>To <dfn>see</dfn> a card or a zone means to look at the card/zone which is normally private or restricted knowledge, without showing any other player. For example, if you see another player's hand, they must allow you (and only you) to look thru and read all of the cards in their hand.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Self-bounce</h4>
+        <p>To <dfn>self-bounce</dfn> a card is to bounce one of your cards as a cost. The text will specify which of your cards you are to self-bounce.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Self-bury</h4>
+        <p>To <dfn>self-bury</dfn> a card is to bury one of your cards as a cost. The text will specify which of your cards you are to self-bury.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Self-destroy</h4>
+        <p>To <dfn>self-destroy</dfn> a card is to destroy one of your cards as a cost. The text will specify which of your cards you are to self-destroy.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Self-exhaust</h4>
+        <p>To <dfn>self-exhaust</dfn> a card is to exhaust one of your unexhausted cards as a cost. The text will specify which of your cards you are to self-exhaust.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Self-sheathe</h4>
+        <p>To <dfn>self-sheathe</dfn> a card is to sheathe one of your cards as a cost. The text will specify which of your cards you are to self-sheathe.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Sheathe</h4>
+        <p>To <dfn>sheathe</dfn> a card is to place it on the top of its owner's deck. When sheathing multiple cards at once, you choose the order.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Silo</h4>
+        <p>To <dfn>silo</dfn> a card means to place it into its owner's granary, exhausted and face-down.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>Target</h4>
+        <p>Used as a verb, the word <dfn>target</dfn> instructs on how to select the targets of a sub-ability. Used as a noun, <dfn>target</dfn> or <dfn>targets</dfn> refers to all cards which have been selected by the aforementioned target selection text within the same sub-ability. (Each sub-ability is on a separate sentence within the ability and designates its own targets separately. If a sub-ability does not explicitly instruct on how to select targets, it has no targets and any effects that would do something to targets has no effect.)</p>
+        <p>It is <em>not</em> possible to &ldquo;stack&rdquo; a sub-ability's effects by targeting one card multiple times within the same sub-ability. For example, if an ability targets 2 in-play cards and places 1 counter on each target, but there is only 1 in-play minion to target, you still can only place 1 counter on said minion.</p>
+        </div>
+
+        <div class="no-break">
+        <h4>You</h4>
+        <p>As used in card text, <dfn>you</dfn> and <dfn>yourself</dfn> always refer to the player who is using the card in question, i.e. its controller or the player summoning or casting it, regardless of who its owner is. Similarly, <dfn>your</dfn> always refers to that player's field, and cards whose controller is that player.</p>
+        </div>
+
+        <h3 id="banned">Refurbished and Pruned Cards</h3>
+        <p>As the game develops, any given card made for old editions can become outdated. In that case, one of two things happens: either the card is <dfn>refurbished</dfn> &ndash; meaning the card's outdated text is substituted for some other, newer card text; or the card is <dfn>pruned</dfn> &ndash; meaning it is no longer a valid card for use in a game. This section exhaustively lists all cases in which cards are refurbished or pruned.</p>
+        <p>To assist with this process, all cards are required to carry an Edition Indicator showing which edition the card was designed for. The indicated edition is referred to as the <dfn>design edition</dfn>. Any card with no Edition Indicator is invalid.</p>
+
+        <h4 id="cleanslate">Clean Slate Edition</h4>
+        <p>13<sup>th</sup> Edition is considered to be a <dfn>clean slate edition</dfn>, meaning that any card whose design edition is prior to 13<sup>th</sup> Edition is pruned.</p>
+
+        <!--
+        <h4 id="refurbished">Refurbished Card Texts</h4>
+        <p>This section lists refurbished card texts. Any card containing any exact original text indicated here is refurbished as shown. These are listed in alphabetical order (based on the original text). Note: <var>x</var>, <var>y</var>, and <var>z</var> are replaced with numbers in cards.</p>
+        <table>
+            <tr>
+                <th>Original Text</th>
+                <th>New Text</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        -->
+
+        <!--
+        <h4 id="redacted">Redacted Card Texts</h4>
+        <p>This section lists card texts which have been redacted. Any card containing any exact text indicated here is pruned. These are listed in alphabetical order. Note: <var>x</var>, <var>y</var>, and <var>z</var> are replaced with numbers in cards.</p>
+        <ul>
+            <li>&ldquo;Remove x counters from this card;&rdquo; (12<sup>th</sup> Edition)</li>
+        </ul>
+        -->
+
+        <!--
+        <h4 id="costs">Revised Cost Texts</h4>
+        <p>This section lists card texts whose costs have been revised, and the edition in which such revision occurred. Any card containing any exact text indicated here, and whose design edition is older than the cost revision edition for the respective text(s), is pruned. These are listed in alphabetical order. Note: <var>x</var>, <var>y</var>, and <var>z</var> are replaced with numbers in cards.</p>
+        <ul>
+        </ul>
+        -->
+    </main>
+
+    <div class="footer">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div>
+</body>
+
+</html>
