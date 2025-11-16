@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Card Building Examples (16th Edition) - Keeper of the Cards</title>
+    <meta name="description" content="The ultimate DIY trading card game" />
+    <meta name="keywords" content="kotc" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+            "HTML-CSS": {
+            linebreaks: { automatic: true, width: "container" }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1 class="header">Keeper of the Cards</h1>
+
+    <main>
+        <h2>Card Building Examples (16<sup>th</sup> Edition)</h2>
+        <p>This page is a supplement to the <a href="cardbuilding.html">Card Building Guide</a>. It goes over how to recreate specific examples of cards from the starter decks, starting with the least complex and gradually moving upward in complexity.</p>
+
+        <h3>Contents</h3>
+        <nav>
+            <ol type="1">
+                <li><a href="#velociraptor">Minion: Velociraptor</a></li>
+                <li><a href="#antibiotic">Spell: Antibiotic</a></li>
+                <li><a href="#asteroid">Spell: Asteroid Impact</a></li>
+                <li><a href="#thunderstrike">Spell: Thunderstrike</a></li>
+                <li><a href="#thor">Minion: Thor</a></li>
+                <li><a href="#equus-africanus-asinus">Minion: Equus Africanus Asinus</a></li>
+            </ol>
+        </nav>
+
+        <h3 id="velociraptor">Minion: Velociraptor</h3>
+        <img class="example" src="images/build-examples/velociraptor.png" alt="Velociraptor: level 4 minion with 2 SP, 4 HP, and no abilities.">
+        <p>This is a simple minion with no abilities. The following steps recreate this minion:</p>
+        <ol>
+            <li>Begin with the minion's level set to 0.</li>
+            <li>Choose the minion's SP. You can choose any number. In this case, we choose 2.</li>
+            <li>Add the minion's SP to its level, bringing it to 2.</li>
+            <li>Choose the minion's HP. You can choose any number, but a multiple of 2 is recommended. In this case, we choose 4.</li>
+            <li>Take the minion's HP and divide it by 2. Add the result (2 in this case) to the minion's level, bringing it to 4.</li>
+            <li>The minion's final level in this example is 4.</li>
+        </ol>
+
+        <h3 id="antibiotic">Spell: Antibiotic</h3>
+        <img class="example" src="images/build-examples/antibiotic.png" alt="Antibiotic: level 2 spell with ability: &ldquo;2-dice-heal yourself.&rdquo;">
+        <p>This is an example of the simplest possible spell, composed only of a single effect. The following steps recreate this spell:</p>
+        <ol>
+            <li>Begin with the spell's level set to 0.</li>
+            <li>Choose the effect you want from <a href="cardbuilding.html#effects">Card Building Guide: Effects</a>. In this case, it's: &ldquo;<var>x</var>-dice-heal yourself.&rdquo;</li>
+            <li>Since the effect has a variable <var>x</var>, replace that variable with a number. In this case, we choose the number 2. This gives us: &ldquo;2-dice-heal yourself.&rdquo;</li>
+            <li>Check the effect's level increase formula. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>x</var> in this formula with the number chosen in the previous step; in this case, 2. Since the formula is only a simple variable, we add the number (2) to the spell's level.
+            </li>
+            <li>Since the spell has no target selection, the sub-ability text is just the effect text. Since the spell has no activation condition and no activation cost, the ability text is just the sub-ability text. This gives us: &ldquo;2-dice-heal yourself.&rdquo;</li>
+            <li>The spell's final level in this example is 2.</li>
+        </ol>
+
+        <h3 id="asteroid">Spell: Asteroid Impact</h3>
+        <img class="example" src="images/build-examples/asteroid_impact.png" alt="Asteroid Impact: level 8 spell with ability: &ldquo;Target up to 4 on-field minions; destroy the targets.&rdquo;">
+        <p>This spell is slightly more complex than Antibiotic, but still fairly simple, composed of a single target selection and a single effect. The following steps recreate this spell:</p>
+        <ol>
+            <li>Begin with the spell's level set to 0.</li>
+            <li>Choose the effect you want from <a href="cardbuilding.html#effects">Card Building Guide: Effects</a>. In this case, it's: &ldquo;destroy the targets.&rdquo;</li>
+            <li>Since the chosen effect does something with targets, we must include a target selection for this to do anything. Choose the target selection you want from <a href="cardbuilding.html#targeting">Card Building Guide: Target Selections</a>. In this case, we choose, &ldquo;Target up to <var>x</var> on-field minions;&rdquo;</li>
+            <li>Since the target selection has a variable <var>x</var>, replace that variable with a number. In this case, we choose the number 4. This gives us: &ldquo;Target up to 4 on-field minions;&rdquo;</li>
+            <li>Check the target selection's formula for the variable <var>t</var>. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>x</var> in this formula with the number chosen in the previous step; in this case, 4. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>4</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Therefore, the variable <var>t</var> is set to 4.
+            </li>
+            <li>Check the effect's level increase formula. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>t</var> in this formula with the number calculated in the previous step; in this case, 4. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>×</mo>
+                        <mn>4</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                We can now solve the level increase formula; doing so, we get 8 and therefore add 8 to the spell's level, bringing it to 8.
+            </li>
+            <li>The spell's sub-ability text is the target selection followed by the effect.  In this case, we get: &ldquo;Target up to 4 on-field minions; destroy the targets.&rdquo;</li>
+            <li>Since the spell has no activation conditions and no activation costs, the ability text is just the sub-ability text. This gives us: &ldquo;Target up to 4 on-field minions; destroy the targets.&rdquo;</li>
+            <li>The spell's final level in this example is 8.</li>
+        </ol>
+
+        <h3 id="thunderstrike">Spell: Thunderstrike</h3>
+        <img class="example" src="images/build-examples/thunderstrike.png" alt="Thunderstrike: level 2 spell with ability: &ldquo;Target 1 on-field minion; destroy it.&rdquo;">
+        <p>This lower-level spell is made in almost exactly the same way as Asteroid Impact. The following steps recreate it:</p>
+        <ol>
+            <li>Begin with the spell's level set to 0.</li>
+            <li>Choose the effect you want from <a href="cardbuilding.html#effects">Card Building Guide: Effects</a>. In this case, it's: &ldquo;destroy the targets.&rdquo;</li>
+            <li>Since the chosen effect does something with targets, we must include a target selection for this to do anything. Choose the target selection you want from <a href="cardbuilding.html#targeting">Card Building Guide: Target Selections</a>. In this case, we choose, &ldquo;Target up to <var>x</var> on-field minions;&rdquo;</li>
+            <li>Since the target selection has a variable <var>x</var>, replace that variable with a number. In this case, we choose the number 1. This gives us: &ldquo;Target up to 1 on-field minions;&rdquo;</li>
+            <li>Check the target selection's formula for the variable <var>t</var>. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>x</var> in this formula with the number chosen in the previous step; in this case, 1. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Therefore, the variable <var>t</var> is set to 1.
+            </li>
+            <li>Check the effect's level increase formula. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>t</var> in this formula with the number calculated in the previous step; in this case, 1. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>×</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                We can now solve the formula; doing so, we get 2 and therefore add 2 to the spell's level, bringing it to 2.
+            </li>
+            <li>The spell's sub-ability text is the target selection followed by the effect. In this case, we get: &ldquo;Target up to 1 on-field minions; destroy the targets.&rdquo;</li>
+            <li>Since only 1 card can be targeted by the spell's sub-ability, following the card building guide's recommendations, we remove the words "up to" and change the plural &ldquo;cards&rdquo; to the singular &ldquo;card&rdquo; in the target selection, and we change the plural &ldquo;the targets&rdquo; in the effect to the singular &ldquo;it&rdquo;. This gives us: &ldquo;Target 1 on-field minion; destroy it.&rdquo;</li>
+            <li>Since the spell has no activation conditions and no activation costs, the ability text is just the sub-ability text. This gives us: &ldquo;Target 1 on-field minion; destroy it.&rdquo;</li>
+            <li>The spell's final level in this example is 2.</li>
+        </ol>
+
+        <h3 id="thor">Minion: Thor</h3>
+        <img class="example" src="images/build-examples/thor.png" alt="Thor: level 9 minion with 4 SP, 6 HP, and a single ability titled &ldquo;THOR'S HAMMER&rdquo;: &ldquo;When this card attacks, after Attack Formation (ghost-play): Target 1 on-field minion; destroy it.&rdquo;">
+        <p>This minion has an ability which is almost identical to the Thunderstrike spell, but includes an activation condition as well. The following steps recreate this minion:</p>
+        <ol>
+            <li>Begin with the minion's level set to 0.</li>
+            <li>Choose the minion's SP. You can choose any number. In this case, we choose 4.</li>
+            <li>Add the minion's SP to its level, bringing it to 4.</li>
+            <li>Choose the minion's HP. You can choose any number, but a multiple of 2 is recommended. In this case, we choose 6.</li>
+            <li>Take the minion's HP and divide it by 2. Add the result (3 in this case) to the minion's level, bringing it to 7.</li>
+            <li>Choose a name for the minion's ability. It can be anything you want, but must be in all capital letters. In this case, we choose &ldquo;THOR'S HAMMER&rdquo;. Its level starts at 0.</li>
+            <li>In this case, we want to include an activation condition in THOR'S HAMMER. Select the desired activation condition from <a href="cardbuilding.html#conditions">Card Building Guide: Activation Conditions</a>. In this case, it's: &ldquo;When this card attacks, after Attack Formation (ghost-play):&rdquo;</li>
+            <li>Choose the effect you want for THOR'S HAMMER's sub-ability from <a href="cardbuilding.html#effects">Card Building Guide: Effects</a>. In this case, it's: &ldquo;destroy the targets.&rdquo;</li>
+            <li>Since the chosen effect does something with targets, we must include a target selection for this to do anything. Choose the target selection you want from <a href="cardbuilding.html#targeting">Card Building Guide: Target Selections</a>. In this case, we choose, &ldquo;Target up to <var>x</var> on-field minions;&rdquo;</li>
+            <li>Since the target selection has a variable <var>x</var>, replace that variable with a number. In this case, we choose the number 1. This gives us: &ldquo;Target up to 1 on-field minions;&rdquo;</li>
+            <li>Check the target selection's formula for the variable <var>t</var>. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>x</var> in this formula with the number chosen in the previous step; in this case, 1. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Therefore, the variable <var>t</var> is set to 1.
+            </li>
+            <li>Check the effect's level increase formula. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>t</var> in this formula with the number calculated in the previous step; in this case, 1. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>×</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                We can now solve the formula; doing so, we get 2 and therefore add 2 to THOR'S HAMMER's level, bringing it to 2.
+            </li>
+            <li>Add THOR'S HAMMER's level (2) to the minion's level, bringing it to 9.</li>
+            <li>THOR'S HAMMER's sub-ability text is the target selection followed by the effect. In this case, we get: &ldquo;Target up to 1 on-field minions; destroy the targets.&rdquo;</li>
+            <li>Since only 1 card can be targeted by THOR'S HAMMER's sub-ability, following the card building guide's recommendations, we remove the words "up to" and change the plural &ldquo;cards&rdquo; to the singular &ldquo;card&rdquo; in the target selection, and we change the plural &ldquo;the targets&rdquo; in the effect to the singular &ldquo;it&rdquo;. This gives us: &ldquo;Target 1 on-field minion; destroy it.&rdquo;</li>
+            <li>THOR'S HAMMER's ability text is its name (&ldquo;THOR'S HAMMER&rdquo;), followed by a colon, followed by its activation condition, followed by its sub-ability text. In this case, we get: &ldquo;THOR'S HAMMER: When this card attacks, after Attack Formation (ghost-play): Target 1 on-field minion; destroy it.&rdquo;</li>
+            <li>The minion's ability text is the ability text of all abilities (THOR'S HAMMER in this case), each on a separate paragraph.</li>
+            <li>The minion's final level in this example is 9.</li>
+        </ol>
+
+        <h3 id="equus-africanus-asinus">Minion: Equus Africanus Asinus</h3>
+        <img class="example" src="images/build-examples/equus_africanus_asinus.png" alt="Equus Africanus Asinus: level 3 minion with 0 SP, 0 HP, and 2 abilities: &ldquo;ASSIST&rdquo; and &ldquo;REASSESS&rdquo;. ASSIST: &ldquo;Draw 1 card.&rdquo; REASSESS: &ldquo;When this on-field minion is destroyed (ghost-play): self-exhaust 2 resources→ Target this card; silo it.&rdquo;">
+        <p>This minion has no SP or HP, but has two abilities, one of which has a non-standard activation condition and an activation cost. The following steps recreate this minion:</p>
+        <ol>
+            <li>Begin with the minion's level set to 0.</li>
+            <li>Choose the minion's SP. You can choose any number. In this case, we choose 0.</li>
+            <li>Add the minion's SP to its level, bringing it to 0.</li>
+            <li>Choose the minion's HP. You can choose any number, but a multiple of 2 is recommended. In this case, we choose 0.</li>
+            <li>Take the minion's HP and divide it by 2. Add the result (0 in this case) to the minion's level, bringing it to 0.</li>
+            <li>Choose a name for the minion's first ability. It can be anything you want, but must be in all capital letters. In this case, we choose &ldquo;ASSIST&rdquo;. Its level starts at 0.</li>
+            <li>Choose the effect you want for ASSIST's sub-ability from <a href="cardbuilding.html#effects">Card Building Guide: Effects</a>. In this case, it's: &ldquo;draw <var>x</var> cards.&rdquo;</li>
+            <li>Since the effect has a variable <var>x</var>, replace that variable with a number. In this case, we choose the number 1. This gives us: &ldquo;draw 1 cards.&rdquo;</li>
+            <li>Check the effect's level increase formula. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>x</var> in this formula with the number chosen in the previous step; in this case, 1. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>×</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                We can now solve the formula; doing so, we get 2 and therefore add 2 to ASSIST's level, bringing it to 2.
+            </li>
+            <li>Add ASSIST's level (2) to the minion's level, bringing it to 2.</li>
+            <li>Since ASSIST has no target selection, the sub-ability text is just the effect text. Since the number chosen was 1, we change the plural "cards" to the singular "card". This gives us: &ldquo;Draw 1 card.&rdquo;</li>
+            <li>ASSIST's ability text is its name (&ldquo;ASSIST&rdquo;), followed by a colon, followed by its sub-ability text. This gives us: &ldquo;ASSIST: Draw 1 card.&rdquo;</li>
+            <li>Choose a name for the minion's second ability. In this case, we choose &ldquo;REASSESS&rdquo;. Its level starts at 0.</li>
+            <li>In this case, we want to include an activation condition in REASSESS. Select the desired activation condition from <a href="cardbuilding.html#conditions">Card Building Guide: Activation Conditions</a>. In this case, it's: &ldquo;When this on-field minion is destroyed (ghost-play):&rdquo;</li>
+            <li>Choose the effect you want for REASSESS's sub-ability from <a href="cardbuilding.html#effects">Card Building Guide: Effects</a>. In this case, it's: &ldquo;silo the targets.&rdquo;</li>
+            <li>Since the chosen effect does something with targets, we must include a target selection for this to do anything. Choose the target selection you want from <a href="cardbuilding.html#targeting">Card Building Guide: Target Selections</a>. In this case, we choose: &ldquo;Target this card;&rdquo;</li>
+            <li>Check the target selection's formula for the variable <var>t</var>. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Since the formula is only a simple variable assignment, the variable <var>t</var> is set to 1.
+            </li>
+            <li>Check the effect's level increase formula. In this case, the formula is
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>t</mi>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>t</var> in this formula with the number calculated in the previous step; in this case, 1. Doing so, we get
+                <math display="inline">
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>×</mo>
+                        <mn>1</mn>
+                    </mrow>
+                    <mtext>.</mtext>
+                </math>
+                We can now solve the formula; doing so, we get 2 and therefore add 2 to REASSESS's level, bringing it to 2.
+            </li>
+            <li>REASSESS's sub-ability text is the target selection followed by the effect. In this case, we get: &ldquo;Target this card; silo the targets.&rdquo;</li>
+            <li>Since only 1 card can be targeted by REASSESS's sub-ability, following the card building guide's recommendations, we change the plural &ldquo;the targets&rdquo; in the effect to the singular &ldquo;it&rdquo;. This gives us: &ldquo;Target this card; silo it.&rdquo;</li>
+            <li>In this case, we want to include an activation cost in REASSESS. Select the desired activation cost from <a href="cardbuilding.html#costs">Card Building Guide: Activation Costs</a>. In this case, it's: &ldquo;self-exhaust <var>x</var> resources→&rdquo;</li>
+            <li>Since the activation cost has a variable <var>x</var>, replace that variable with a number. In this case, we choose the number 2. This gives us: &ldquo;self-exhaust 2 resources→&rdquo;</li>
+            <li>Check the activation cost's level decrease formula. In this case, the formula is
+                <math display="inline">
+                    <mfrac>
+                        <mrow>
+                            <mi>x</mi>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>.</mtext>
+                </math>
+                Replace the variable <var>x</var> in this formula with the number chosen in the previous step; in this case, 2. Doing so, we get
+                <math display="inline">
+                    <mfrac>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                        <mrow>
+                            <mn>2</mn>
+                        </mrow>
+                    </mfrac>
+                    <mtext>.</mtext>
+                </math>
+                We can now solve the formula; doing so, we get 1 and therefore subtract 1 from REASSESS's level, bringing it to 1.
+            </li>
+            <li>Add REASSESS's level (1) to the minion's level, bringing it to 3.</li>
+            <li>REASSESS's ability text is its name (&ldquo;REASSESS&rdquo;), followed by a colon, followed by its activation condition, followed by its activation cost, followed by its sub-ability text. In this case, we get: &ldquo;REASSESS: When this on-field minion is destroyed (ghost-play): self-exhaust 2 resources→ Target this card; silo it.&rdquo;</li>
+            <li>The minion's ability text is the ability text of all abilities (ASSIST and REASSESS in this case), each on a separate paragraph.</li>
+            <li>The minion's final level in this example is 3.</li>
+        </ol>
+    </main>
+
+    <div class="footer">
+        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img alt="CC BY-SA" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </div>
+</body>
+
+</html>
