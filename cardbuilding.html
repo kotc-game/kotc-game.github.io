@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Card Building Guide (19th Edition) - Keeper of the Cards</title>
+    <title>Card Building Guide (20th Edition) - Keeper of the Cards</title>
     <meta name="description" content="The ultimate DIY trading card game" />
     <meta name="keywords" content="kotc" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     </nav>
 
     <main>
-        <h2>Card Building Guide (19<sup>th</sup> Edition)</h2>
+        <h2>Card Building Guide (20<sup>th</sup> Edition)</h2>
         <p>This guide instructs how to design cards for Keeper of the Cards. It is written in a manner focused on precision and clarity as a reference moreso than ease of learning, so for a more gradual introduction, <a href="examples.html">Card Building Examples</a> is also available.</p>
 
         <div class="no-break">
@@ -62,7 +62,7 @@
         </div>
 
         <h3 id="instructions">Design Instructions</h3>
-        <p>When designing a card, you have a great deal of free reign with regard to what that card does. However, a card's level (the number indicated on top of the green circle on the bottom) is strictly defined based on what stats and abilities you give your card. As such, to create competitively viable cards, you need to strike a balance to make cards that play well, but are not prohibitively expensive to use.</p>
+        <p>When designing a card, you have a great deal of free rein with regard to what that card does. However, a card's level (the number indicated on top of the green circle on the bottom) is strictly defined based on what stats and abilities you give your card. As such, to create competitively viable cards, you need to strike a balance to make cards that play well, but are not prohibitively expensive to use.</p>
         <p>There are 2 types of cards: minions, and spells.</p>
         <ul>
             <li>Minions have <abbr title="strength points">SP</abbr>, <abbr title="hitpoints">HP</abbr>, and any number of abilities. SP and HP must each be no lower than 0.</li>
@@ -227,7 +227,7 @@
         <h4 id="costs">Activation Costs</h4>
         <p>Activation costs serve to reduce an ability's level by &ldquo;paying&rdquo; in other ways. Each ability can have any number of activation costs. The formula used to calculate the amount of level decrease an activation cost provides is listed in parentheses.</p>
         <p>If an activation cost does not follow any activation condition or any other activation cost within the ability, its first letter should be capitalized.</p>
-        <p>If an ability has exactly 2 activation costs, the arrow in the first activation cost is replaced by the word &ldquo;and&rdquo;. If an ability has 3 or more activation costs, all of its activation costs are connected as a comma-separated list, using the word &ldquo;and&rdquo; as a coördinating conjunction, replacing each activation cost's arrow except for the final one listed. An example would be: &ldquo;Self-exhaust 1 resource, self-destroy 1 on-field minion, and self-sheathe 1 card in your hand→&rdquo;</p>
+        <p>If an ability has exactly 2 activation costs, the arrow in the first activation cost is replaced by the word &ldquo;and&rdquo;. If an ability has 3 or more activation costs, all of its activation costs are connected as a comma-separated list, using the word &ldquo;and&rdquo; as a coördinating conjunction, replacing each activation cost's arrow except for the final one listed. An example would be: &ldquo;Exhaust 1 card in your granary, destroy 1 minion in your battlefield, and sheathe 1 card in your hand→&rdquo;</p>
         <ul>
             <li>
                 <math display="inline">
@@ -274,7 +274,19 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;gift-summon <var>x</var> minions in your hand→&rdquo;
+                &ldquo;donate <var>x</var> minions in your hand→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;donate <var>x</var> spells in your hand→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -289,7 +301,7 @@
                     </mfrac>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-exhaust <var>x</var> resources→&rdquo;
+                &ldquo;exhaust <var>x</var> cards in your granary→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -299,7 +311,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-sheathe <var>x</var> resources→&rdquo;
+                &ldquo;sheathe <var>x</var> cards in your granary→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -309,7 +321,31 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-destroy <var>x</var> resources→&rdquo;
+                &ldquo;destroy <var>x</var> cards in your granary→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;donate <var>x</var> minions in your granary→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;donate <var>x</var> spells in your granary→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -344,7 +380,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-exhaust <var>x</var> on-field minions→&rdquo;
+                &ldquo;exhaust <var>x</var> minions in your battlefield→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -354,19 +390,7 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-bounce <var>x</var> on-field minions→&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
-                        <mn>2</mn>
-                        <mo>&InvisibleTimes;</mo>
-                        <mi>x</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-sheathe <var>x</var> on-field minions→&rdquo;
+                &ldquo;bounce <var>x</var> minions in your battlefield→&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -378,7 +402,19 @@
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;self-destroy <var>x</var> on-field minions→&rdquo;
+                &ldquo;sheathe <var>x</var> minions in your battlefield→&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;destroy <var>x</var> minions in your battlefield→&rdquo;
             </li>
         </ul>
         </div>
@@ -403,22 +439,6 @@
                     <mtext>)</mtext>
                 </math>
                 &ldquo;pay <var>x</var> HP→&rdquo;
-            </li>
-            <li>
-                [+4]
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mfrac>
-                        <mrow>
-                            <mi>x</mi>
-                        </mrow>
-                        <mrow>
-                            <mn>10</mn>
-                        </mrow>
-                    </mfrac>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;self-destroy <var>x</var> cards on top of your deck→&rdquo;
             </li>
         </ul>
         </div>
@@ -477,6 +497,18 @@
                     <mtext>)</mtext>
                 </math>
                 &ldquo;Target up to <var>x</var> on-field minions;&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>t</mi>
+                        <mo>=</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;Target up to <var>x</var> heirs;&rdquo;
             </li>
             <li>
                 <math display="inline">
