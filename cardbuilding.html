@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Card Building Guide (20th Edition) - Keeper of the Cards</title>
+    <title>Card Building Guide (21st Edition) - Keeper of the Cards</title>
     <meta name="description" content="The ultimate DIY trading card game" />
     <meta name="keywords" content="kotc" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -33,7 +33,7 @@
     </nav>
 
     <main>
-        <h2>Card Building Guide (20<sup>th</sup> Edition)</h2>
+        <h2>Card Building Guide (21<sup>st</sup> Edition)</h2>
         <p>This guide instructs how to design cards for Keeper of the Cards. It is written in a manner focused on precision and clarity as a reference moreso than ease of learning, so for a more gradual introduction, <a href="examples.html">Card Building Examples</a> is also available.</p>
 
         <div class="no-break">
@@ -65,7 +65,7 @@
         <p>When designing a card, you have a great deal of free rein with regard to what that card does. However, a card's level (the number indicated on top of the green circle on the bottom) is strictly defined based on what stats and abilities you give your card. As such, to create competitively viable cards, you need to strike a balance to make cards that play well, but are not prohibitively expensive to use.</p>
         <p>There are 2 types of cards: minions, and spells.</p>
         <ul>
-            <li>Minions have <abbr title="strength points">SP</abbr>, <abbr title="hitpoints">HP</abbr>, and any number of abilities. SP and HP must each be no lower than 0.</li>
+            <li>Minions have <abbr>SP</abbr> (strength points), <abbr>HP</abbr> (hitpoints), and any number of abilities. SP and HP must each be no lower than 0.</li>
             <li>Spells have only a single ability.</li>
         </ul>
 
@@ -82,7 +82,7 @@
             <li>1 target selection from the <a href="#targeting">Target Selections</a> section (optional)</li>
             <li>1 or more effects from the <a href="#effects">Effects</a> section (required)</li>
         </ol>
-        <p>These components must be listed in that order for each ability and each sub-ability. You must choose non-redacted components from the respective section only. All text of the ability, including all sub-abilities, must be on the same paragraph.</p>
+        <p>These components must be listed in that order for each ability and each sub-ability. You must choose components from the respective section only. All text of the ability, including all sub-abilities, must be on the same paragraph.</p>
         <p>Many components have variables, indicated as <var>x</var>, <var>y</var>, or <var>z</var>, in them. You are to choose a number, which <em>must</em> be a <strong>positive, non-zero integer</strong> (i.e. at least 1), for each of these components, replace <var>x</var>, <var>y</var>, or <var>z</var> with the chosen number, and replace any <var>x</var>, <var>y</var>, and <var>z</var> in the component's formula with the same respective numbers.</p>
         <p>Any minion ability should preferably be named. The name is designated at the beginning of the ability's paragraph, and should be made distinct from the actual ability text in some way, such as using all capital letters, using a different font, or enclosing the ability name in brackets.</p>
         <p>If a card is simple and has short text, you may include extra tutorial text to help teach keywords or game mechanics to beginners. Any tutorial text must be in parentheses and should be rendered in italics to make it clear that it is separate from the rest of the card text.</p>
@@ -92,9 +92,9 @@
         <div class="no-break">
         <h4 id="inst-level">Level</h4>
         <p>A card's level is determined mathematically by considering the powers and abilities of the card. Each effect and target selection has a designated level increase formula, and each activation cost has a designated level decrease formula, listed in parentheses prior to the respective card text in the <a href="#texts">Card Texts</a> section.</p>
-        <p>To determine a sub-ability level, take the sum of all effect level increase formulas corresponding to effect texts used in the sub-ability.</p>
-        <p>To determine a level of an ability, add together the ability's sub-ability levels, then if the ability has an activation cost, subtract the activation cost level decrease calculated by the level decrease formula. Round the result up to the next integer if it isn't one already. If less than 0, set to 0. If the ability is a minion ability, the minion already has a previous level 0 ability, and its level is less than 1, set to 1. (In other words, spell abilities are always allowed to be level 0, and one ability of a minion is allowed to be level 0, but further minion abilities after the first level 0 ability must always be at least level 1.)</p>
-        <p>To determine the level of a minion, add together the minion's SP and one half of its HP and round up to the next integer if it isn't one already. If less than 0, set to 0. Then, add the levels of all of the minion's abilities to the minion's level.</p>
+        <p>To determine the level of a sub-ability, take the sum of all effect level increase formulas corresponding to effect texts used in the sub-ability.</p>
+        <p>To determine the level of an ability, add together the ability's sub-ability levels, then if the ability has an activation cost, subtract the activation cost level decrease calculated by the level decrease formula. Round the result up to the next integer if it isn't one already. If less than 0, set to 0. If the ability is a minion ability, the minion already has a previous level 0 ability, and its level is less than 1, set to 1. (In other words, spell abilities are always allowed to be level 0, and one ability of a minion is allowed to be level 0, but further minion abilities after the first level 0 ability must always be at least level 1.)</p>
+        <p>To determine the level of a minion, add together the minion's SP and one half of its HP and round up to the next integer if it isn't one already. Then, add the levels of all of the minion's abilities to the minion's level.</p>
         <p>The level of a spell is equal to the level of its ability.</p>
         </div>
 
@@ -108,8 +108,8 @@
         <h4 id="inst-creation">Creating the Card</h4>
         <p>Once you have decided the parameters of your card and calculated the level, edit &ldquo;card.xcf&rdquo; in an image editor that supports the format (such as the GNU Image Manipulation Program or Photoshop), and edit the text fields appropriately. Make sure the &ldquo;Minion Template&rdquo; layer is visible while the &ldquo;Spell Template&rdquo; layer is invisible if designing a minion, or vice-versa if designing a spell. If designing a spell, also make sure to remove the SP and HP numbers from the bottom-left and bottom-right of the card, respectively.</p>
         <p>If the card is worth 0 Ultra Points, you should hide the &ldquo;Ultra Points&rdquo; and &ldquo;Ultra Points Symbol&rdquo; layers. Doing so creates a more apparent visual distinction between regular cards and ultra cards, which makes keeping track of total Ultra Points for deckbuilding easier.</p>
-        <p>If the card is a spell and has an activation condition, you should make the &ldquo;Play Restriction&rdquo; layer visible. This is meant to help avoid mistakes during gameplay which give away hand knowledge.</p>
-        <p>You can paste an image to represent your card into the &ldquo;Image&rdquo; layer. You can also indicate the copyright license and author(s) of the card and/or image via the &ldquo;Card License&rdquo; text layer.</p>
+        <p>You can draw or paste an image to represent your card into the &ldquo;Image&rdquo; layer.</p>
+        <p>You can indicate the author(s) and copyright license(s) of the card and image via the &ldquo;Author and License&rdquo; text layer. If you use a third-party image, be sure to follow its licensing terms.</p>
         <p>You may modify the look of the card as much as you want as long as the meaning of the components is understood by all players. In general, it is recommended to keep it as close as possible to the official layout to avoid confusion.</p>
         <p>The standard size for cards is 2.5 inches wide and 3.5 inches tall (or 66 mm × 91 mm). You do not have to follow this size if you don't want to as long as all of your cards are the same size and appearance when viewed from the back. (You can achieve this easily with sleeves if you print in a standard card size.)</p>
         For the back of cards, an image is provided as &ldquo;card_base/card_back.png&rdquo;. Using this is optional as long as sleeves are used that are opaque when viewed from the back.
@@ -722,6 +722,18 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
+                        <mn>5</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;fission all counters <var>x</var> times.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
                         <mi>x</mi>
                     </mrow>
                     <mtext>)</mtext>
@@ -847,6 +859,18 @@
                     <mtext>)</mtext>
                 </math>
                 &ldquo;issue <var>x</var> Dice Counters.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;issue <var>x</var> Mana Counters.&rdquo;
             </li>
             <li>
                 <math display="inline">
@@ -1025,23 +1049,25 @@
                 <math display="inline">
                     <mtext>(</mtext>
                     <mrow>
-                        <mi>x</mi>
-                    </mrow>
-                    <mtext>)</mtext>
-                </math>
-                &ldquo;hand-down-level by <var>x</var>.&rdquo;
-            </li>
-            <li>
-                <math display="inline">
-                    <mtext>(</mtext>
-                    <mrow>
+                        <mn>2</mn>
+                        <mo>&InvisibleTimes;</mo>
                         <mi>x</mi>
                         <mo>&InvisibleTimes;</mo>
                         <mi>t</mi>
                     </mrow>
                     <mtext>)</mtext>
                 </math>
-                &ldquo;down-level each target by <var>x</var>.&rdquo;
+                &ldquo;place <var>x</var> Mana Counters on each target.&rdquo;
+            </li>
+            <li>
+                <math display="inline">
+                    <mtext>(</mtext>
+                    <mrow>
+                        <mi>x</mi>
+                    </mrow>
+                    <mtext>)</mtext>
+                </math>
+                &ldquo;down-level a card(s) this turn by <var>x</var>.&rdquo;
             </li>
             <li>
                 <math display="inline">
